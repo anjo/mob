@@ -225,6 +225,7 @@
         TOK_SUBTYPE_INTERSECT = types.TOK_SUBTYPE_INTERSECT = "intersect",
         TOK_SUBTYPE_UNION = types.TOK_SUBTYPE_UNION = "union";
 
+    core.types = types;
     /**
      * @class
      */
@@ -793,7 +794,8 @@
     //
     // Example:
     //    breakOutRanges("A1:B2", "+"); //Returns A1+A2+B1+B2
-    function breakOutRanges(rangeStr, delimStr){
+
+    function breakOutRanges(rangeStr, delimStr, fixUp){
         
         //Quick Check to see if if rangeStr is a valid range
         if ( !RegExp("[a-z]+[0-9]+:[a-z]+[0-9]+","gi").test(rangeStr) ){
@@ -821,20 +823,25 @@
             curCell = "",
             
             //Return String
-            retStr = "";
+            retStr = "",
+            items = [];
+
+        fixUp = fixUp || function(input) {
+            return input;
+        }
         
         for(; curRow <= totalRows; curRow+=1){
             for(; curCol < totalCols; curCol+=1){
                 // Get the current cell id
                 curCell = toBase26(startColDec + curCol) + "" + (startRow+curRow-1) ;
-                retStr += curCell + (curRow===totalRows && curCol===totalCols-1 ? "" : delimStr);
+                items.push(fixUp(curCell));
+                // + (curRow===totalRows && curCol===totalCols-1 ? "" : delimStr);
             }
             curCol=0;
         }
-        
-        return retStr;
-        
+        return items.join(delimStr);
     }
+    core.breakOutRanges = breakOutRanges;
     
     //Modified from function at http://en.wikipedia.org/wiki/Hexavigesimal
     var toBase26 = excelFormulaUtilities.toBase26 = function( value ) {
