@@ -1,0 +1,28 @@
+@import "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css";
+
+header {
+	background-color: black;
+}
+
+*[type="float"] {
+    width: auto;
+    text-align: right;
+}
+
+*[type="int"] {
+    width: auto;
+    text-align: right;
+}
+
+*[type="percent"] {
+    width: auto;
+    text-align: right;
+}
+
+#content {
+    width: 70%;
+}
+
+.table {
+    width: 100%;
+}

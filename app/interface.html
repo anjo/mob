@@ -1,0 +1,574 @@
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Ratoo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body ng-app="interfaceApp">
+
+<table border="1" name="Oberfläche" defaultRowHeightInPoints="14.0" defaultColumnWidth="10">
+<tr heightInPoints="21.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle89" id="A1">Quick Value &amp; Rating</td>
+</tr>
+<tr heightInPoints="21.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle164" id="A2">Oberfläche Entwurf</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="B2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="C2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="D2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="E2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="F2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="G2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle166" id="H2"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle167" id="J2">ERKLÄRUNGSSEITE</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle168" id="K2"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle169" id="M2">Einstellungsseiten</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle170" id="N2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle170" id="O2"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle62" id="A3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle64" id="F3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H3"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle93" id="J3">Umsatz</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle91" id="K3">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle118" id="M3">allgemeine Parameter</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle119" id="N3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="O3"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle121" id="P3">Parameter EXPERT</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="A4">Jahresabschluss</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle97" id="B4">min</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle97" id="C4">EW</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle97" id="D4">Max</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle98" id="E4">EW</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle68" id="F4"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle67" id="G4"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle112" id="H4"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J4">EBIT (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K4">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle116" id="M4">Steuersatz s</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle117" id="N4">Strukturell!B16</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O4"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle93" id="P4">Verwaltungsaufschalg</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A5">Umsatz</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle133" id="B5"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle70" id="C5">Strukturell!C5</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle133" id="D5"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E5">Strukturell!F14</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F5"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="G5">Risikokennzahlen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="H5"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J5">Wachstum w (langfristig)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K5">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="M5"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="N5"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O5"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A6">EBIT (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle70" id="B6">Strukturell!B6</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle70" id="C6">Strukturell!C6</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle70" id="D6">Strukturell!D6</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E6">Strukturell!F15</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F6"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G6">Standardabweichung FCF</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle108" id="H6">Strukturell!F35</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J6">Gewinn (erwartet, nachhaltig, nSt.)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K6">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle118" id="M6">Parameter alternativanlage</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle119" id="N6"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O6"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="P6">Investitionsdauer</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A7">Wachstum w (langfristig)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle134" id="B7"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle72" id="C7">Strukturell!C7</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle134" id="D7"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle100" id="E7">Strukturell!F16</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F7"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="G7">Ertragsrisiko (V fcf)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle102" id="H7">Strukturell!F36</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J7">fcF (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K7">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle93" id="M7">Zins rf (ggf. nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle122" id="N7">Strukturell!B19</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O7"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A8">Gewinn (erwartet, nachhaltig, nSt.)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="B8">Strukturell!F8</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="C8">Strukturell!G8</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="D8">Strukturell!H8</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E8">Strukturell!F17</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle68" id="F8"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G8"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H8"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J8">Bilanzsumme (, betriebsnot. CE)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K8">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="M8">Standardabweichung Markt</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle123" id="N8">Strukturell!B20</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O8"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle69" id="P8">Strukturell!A28</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A9">fcF (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="B9">Strukturell!F9</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="C9">Strukturell!G9</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="D9">Strukturell!H9</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E9">Strukturell!F18</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F9"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="G9">Bewertung</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="H9"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J9">EK</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K9">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="M9">Erwartungswert Markt</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle124" id="N9">Strukturell!B21</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="O9"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="P9">FutureValue Group-PD-Schätzung</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A10">Bilanzsumme (, betriebsnot. CE)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="B10"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle73" id="C10">Strukturell!C8</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="D10"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E10">Strukturell!F21</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F10"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G10">Marktpreis Risiko (Lambda)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle109" id="H10">Strukturell!F53</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle114" id="J10">verz. Netto-FK (inkl. Pensionsrückst.)</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle115" id="K10">DEFINITION / ERKLÄRUNG</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle86" id="M10"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="N10"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="O10"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A11">EK</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="B11"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle73" id="C11">Strukturell!C9</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="D11"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle99" id="E11">Strukturell!F22</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F11"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G11">k</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle95" id="H11">Strukturell!F54</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="I11">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J11">EKQ</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K11">DEFINITION / ERKLÄRUNG</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="A12">verz. Netto-FK (inkl. Pensionsrückst.)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle136" id="B12"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle101" id="C12">Strukturell!C10</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle136" id="D12"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle102" id="E12">Strukturell!F23</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F12"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle110" id="G12">Wert (W)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle111" id="H12">Strukturell!F61</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="I12">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J12">ROCE</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="K12">DEFINITION / ERKLÄRUNG</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle92" id="B13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle92" id="C13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle92" id="D13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle92" id="E13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H13"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J13">EBIT-Marge</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="A14">Finanzkennzahlen (gemäß Erwartungswerte)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="B14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle92" id="C14"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="D14">Rating</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="E14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F14"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="G14">Angemessene Multiples</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="H14"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle114" id="J14">ZDQ</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle115" id="K14">DEFINITION / ERKLÄRUNG</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A15">EKQ</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle95" id="B15">Strukturell!F26</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C15">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="D15">Vorhandenes Rating</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle103" id="E15">Strukturell!B13</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="F15">noch nicht implementiert, ratingtabelle dahinterlegen</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G15">KBV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle96" id="H15">Strukturell!F65</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle114" id="J15">impl. FKZins</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A16">ROCE</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle95" id="B16">Strukturell!F27</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C16">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="D16">PD aus Rating</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle104" id="E16">Strukturell!F43</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="F16">noch nicht implementiert, ratingtabelle dahinterlegen</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G16">KGV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle96" id="H16">Strukturell!F66</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J16">Ertragsrisiko (V fcf)</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A17">EBIT-Marge</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle95" id="B17">Strukturell!F28</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C17">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle105" id="D17">RatingNote FutureValue Group</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle106" id="E17">Strukturell!F50</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F17"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="G17">KUV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle96" id="H17">Strukturell!F67</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J17">Marktpreis Risiko (Lambda)</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A18">ZDQ</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle96" id="B18">Strukturell!F29</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C18">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="D18">Geschätztes PD FutureValue Group</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle94" id="E18">Strukturell!F44</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F18"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="G18">EV/EBIT</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle107" id="H18">Strukturell!F68</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J18">k</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="A19">impl. FKZins</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle94" id="B19">Strukturell!F32</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle113" id="C19">FORMEL DANEBEN</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="D19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="E19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="F19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="G19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle88" id="H19"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle114" id="J19">Wert (W)</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C20"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D20"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E20"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle90" id="A21">Warnmeldungen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="B21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="C21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="D21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="E21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="F21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle120" id="G21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle91" id="H21"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J21">KGV</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A22">noch nicht implementiert</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H22"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="J22">KUV</td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H23"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle86" id="J23">EV/EBIT</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H24"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="H25"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle86" id="A26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="B26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="C26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="D26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="E26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="F26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="G26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle88" id="H26"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E35"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E36"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E37"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E38"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E39"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E40"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E41"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E42"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E43"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H44"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E45"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="F45">Warnmeldungen:</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H45"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E46"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="F46">noch nicht implementiert</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H46"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="F47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="G47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="H47"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E48"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E49"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E50"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A51"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B51"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C51"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D51"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E51"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E52"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A53"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B53"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C53"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D53"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E53"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E54"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A55"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B55"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C55"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D55"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E55"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A56"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B56"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C56"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D56"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E56"></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle86" id="A57"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="B57"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="C57"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="D57"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E57"></td>
+</tr>
+</table>
+<!-- build:js scripts/deps.js -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<!-- endbuild --><!-- scripts/deps.js -->
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild --><!-- scripts/scripts.js -->
+</body>
+</html>

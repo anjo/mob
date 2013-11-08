@@ -1,0 +1,873 @@
+<html class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Ratoo</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body ng-app="structuralApp">
+<table border="1" name="Strukturell" defaultRowHeightInPoints="14.0" defaultColumnWidth="10" ng-controller="StructuralCtrl">
+<tr heightInPoints="21.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle89" id="A1">Quick Value &amp; Rating Calclator</td>
+    <td></td>
+</tr>
+<tr heightInPoints="19.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle164" id="A2">Struktureller Aufbau</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="B2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="C2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="D2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="E2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="F2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="G2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle165" id="H2"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle166" id="I2"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle62" id="A3">Input allgemein</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D3"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle64" id="E3">Output</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H3"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I3"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A4">Jahresabschluss</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="B4">min</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="C4">Mittel</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="D4">Max</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E4">Jahresabschluss</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="F4">min</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="G4">Norm</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle67" id="H4">Max</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I4"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A5">Umsatz</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle133" id="B5"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle70" id="C5">1000.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle133" id="D5"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle144" id="E5">Zinsaufwand</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle146" id="F5"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G5">($B$19+$F$49+$B$24)*($C$10-$B$33)-$B$34*$B$33</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle146" id="H5"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I5"></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="L5"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="M5"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A6">EBIT (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle70" id="B6">50.0</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle70" id="C6">100.0</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle70" id="D6">150.0</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle144" id="E6">Gewinn vor Steuern (nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F6">B6-$G$5</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G6">C6-$G$5</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H6">D6-$G$5</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I6"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A7">Wachstum w (langfristig)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle134" id="B7"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle72" id="C7">0.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle134" id="D7"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle144" id="E7">Steuern</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F7">MAX(0,F6*$B$16)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G7">MAX(0,G6*$B$16)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H7">MAX(0,H6*$B$16)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I7"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A8">Bilanzsumme (betriebsnotw. CE)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="B8"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle73" id="C8">500.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="D8"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E8">Gewinn nach Steuer (nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F8">F6-F7</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G8">G6-G7</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H8">H6-H7</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I8"></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="L8">B6*(1-$B$16)</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="A9">Eigenkapital</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="B9"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle73" id="C9">150.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="D9"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E9">fcF verschuldet (nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F9">B6-$C$7*$C$8-F7</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G9">C6-$C$7*$C$8-G7</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H9">D6-$C$7*$C$8-H7</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I9"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle138" id="J9"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A10">verz. Netto-FK (inkl. Pensionsrückst.)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="B10"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle73" id="C10">350.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="D10"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E10">fcF unverschuldet (nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F10">B6*IF(B6&gt;0,(1-$B$16),1)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G10">C6*IF(C6&gt;0,(1-$B$16),1)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H10">D6*IF(D6&gt;0,(1-$B$16),1)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I10"></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle152" id="L10">L8-F8</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A11"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B11"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C11"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D11"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle147" id="E11">Tax Shield Effekt</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F11">F9-F10</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="G11">G9-G10</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="H11">H9-H10</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I11"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A12">Rating</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="E12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle157" id="F12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H12"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I12"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A13">Vorhandenes Rating</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle75" id="B13">BB</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="C13">Dropdownliste</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D13"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E13">Erwartungswerte Jahresabschluss</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H13"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I13"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle150" id="K13"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle161" id="L13">(F19*F55+F20*F56)/(F19+F11)</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D14"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E14">Umsatz</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F14">C5</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H14"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I14"></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A15">allgemeine Parameter</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B15"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C15"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D15"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E15">EBIT (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F15">SUM(B6:D6)/3</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G15"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H15"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I15"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A16">Steuersatz s</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle76" id="B16">0.3</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C16"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D16"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E16">Wachstum w (Vergleichswert)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle135" id="F16">C7</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G16"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H16"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I16"></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle159" id="L16">L13/L14</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C17"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D17"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E17">Gewinn (erwartet, nachhaltig, nSt.)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F17">AVERAGE(F8:H8)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G17"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H17"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I17"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A18">Marktparameter</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C18"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D18"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E18">fcF verschuldet (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F18">SUM(F9:H9)/3</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="G18"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H18"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A19">Zins rf (ggf. nachhaltig)</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle76" id="B19">0.03</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D19"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E19">fcF unverschuldet (erwartet, nachhaltig)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle142" id="F19">SUM(F10:H10)/3</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I19"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="K19">F18/F19</td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A20">Standardabweichung Marktrendite</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle125" id="B20">0.2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C20"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D20"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle147" id="E20">Tax Shield Effekt</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle142" id="F20">AVERAGE(F11:H11)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G20"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H20"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I20"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A21">Erwartungswert Marktrendite</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle125" id="B21">0.08</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D21"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E21">Bilanzsumme (betriebsnot. CE)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F21">C8</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H21"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I21"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D22"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E22">Eigenkapital</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F22">C9</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H22"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A23">Parameter EXPERT</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D23"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E23">verz. Netto-FK (inkl. Pensionsrückst.)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F23">C10</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H23"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I23"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A24">Verwaltungsaufschlag</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle78" id="B24">0.01</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H24"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I24"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A25">Risikodiversifikationsfaktor d</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B25">1.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D25"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E25">Finanzkennzahlen (gemäß Erwartungswerte)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H25"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I25"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A26">Investitionsdauer</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle79" id="B26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D26"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E26">EKQ</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F26">F22/F21</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H26"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I26"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A27">Vorhandenes Rating verwenden</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle80" id="B27">0.0</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="C27">0=nein, 1=ja</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D27"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E27">ROCE</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F27">F15/F21</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="G27">bezug auf F33 sonst zirkelbezug</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H27"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I27"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A28">Werthaltigkeit Eigenkapital</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B28">1.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C28"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D28"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E28">EBIT-Marge</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F28">F15/F14</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G28"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H28"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I28"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A29">FutureValue Group-PD-Schätzung</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B29">0.0</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="C29">0=Worst Case; 1=Gemittelt</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D29"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E29">ZDQ</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F29">F15/((F23-B33)*(B19+B24+IF(B27=1,F43,F44)))</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H29"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A30">Konverzenzphase (Wachstumsdauer)</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B30">0.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C30"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D30"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E30">EKR</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F30">F17/C9</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="G30">theoretsich richtiger (vertr.) Zinssatz um auf eine erwartete Rendite in Höhe von rf+Aufschlag zu kommen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H30"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I30"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A31">Aktuelles Wachstum</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle78" id="B31">0.1</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C31">ohne FcF-Wirkung</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E31">Dyn. VG</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F31">IF(B36&gt;0,(C10-B33)/(F15+B36),&quot;n.a.&quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G31"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H31"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A32">Konvergenz ROCE -&gt; WACC</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B32">0.0</td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E32">impl. FKZinssatz</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F32">(1+F49+B19)/(1-B24)-1</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G32"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A33">Pensionrückstellungen</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B33">0.0</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D33"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E33"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F33"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G33"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H33"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I33"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A34">Zins Pensionsrückstellungen</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle78" id="B34">0.06</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D34"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E34">Risikokennzahlen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F34"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G34"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H34"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A35">TaxShield</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B35">1.0</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C35">0: nein; 1: ja</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D35"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E35">Standardabweichung FCF (verschuldet)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle81" id="F35">SQRT((F9-H9)^2+(F9-G9)^2+(H9-G9)^2)/6</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="G35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H35"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I35"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A36">Abschreibungen</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle79" id="B36">10.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D36"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E36">Ertragsrisiko (V fcf (verschuldet))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle154" id="F36">F35/F18</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="G36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H36"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I36"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D37"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E37">Standardabweichung FCF (unverschuldet)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle142" id="F37">SQRT((F10-H10)^2+(F10-G10)^2+(H10-G10)^2)/6</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G37"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A38">VERSTECKTE PARAMETER</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D38"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E38">Ertragsrisiko (V fcf (unverschuldet))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle154" id="F38">F37/F19</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H38"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I38"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A39">ZählerPD1</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B39">0.265</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D39"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E39">Standardabweichung Tax Shield</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle142" id="F39">SQRT((F13-H12)^2+(F13-G12)^2+(H12-G12)^2)/6</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H39"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I39"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A40">NennerKonstantePD1</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B40">-0.41</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D40"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E40">Ertragsrisiko (V fcf (unverschuldet))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle154" id="F40">F39/F20</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H40"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A41">NennerMult1PD1</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B41">7.42</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H41"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I41"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A42">NennerMult2PD1</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B42">11.2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D42"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E42">Rating</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H42"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I42"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A43">ZählerPD2</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B43">0.265</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D43"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E43">PD aus vorhandenes Rating</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle135" id="F43">VLOOKUP(B13,A52:B68,2,FALSE)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H43"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I43"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A44">NennerKonstantePD2</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B44">-0.41</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D44"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E44">Geschätztes PD FutureValue Group 1</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F44">B39/(1+EXP(B40+B41*MAX(0,F26)+B42*MAX(F27,-0.1)))</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H44"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I44"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A45">NennerMult1PD2</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B45">0.41</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D45"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E45">Geschätztes PD FutureValue Group 2</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F45">B43/(1+EXP(-B44+B45*F29))</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H45"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I45"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A46">ZählerPD3</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B46">0.39</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D46"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E46">Geschätztes PD FutureValue Group 3</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F46">B46/(1+EXP(B47+B48*MAX(0,F26)+B49*MAX(F28,-0.1)))</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H46"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I46"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A47">NennerKonstantePD3</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B47">0.09</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D47"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E47">WorstCase OD</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F47">MAX(F44:F46)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H47"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I47"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A48">NennerMult1PD3</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B48">10.8</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D48"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E48">Mittleres PD</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F48">AVERAGE(F44:F46)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H48"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I48"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A49">NennerMult2PD3</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle132" id="B49">7.6</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="C49">PD-Grenzen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D49"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E49">Verwendetes PD</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F49">IF(B27=1,F43,IF(B29=0,F47,F48))</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I49"></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="B50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="C50"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D50"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle82" id="E50">RatingNote FutureValue Group</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle83" id="F50">INDEX(A52:A68,MATCH(F49,C52:C68,1))</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="G50"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A51">Ratingtabelle</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="B51">Mittlere PDs</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="C51">Grenzen</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D51"></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A52">AAA- / AAA / AAA +</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B52">1.0E-4</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="C52">0.0</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D52"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E52">Bewertung</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle138" id="G52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle147" id="H52"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I52"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A53">AA+</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B53">2.0E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C53">(B53+B52)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D53"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E53">Marktpreis Risiko (Lambda)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle84" id="F53">(B21-B19)/B20</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H53"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I53"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A54">AA</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B54">3.0E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C54">(B54+B53)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D54"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E54">k (&quot;WACC&quot;) (verschuldet)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*B25*F36)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="G54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*F36)-1,99%)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I54"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="K54"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="L54"></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle138" id="M54">1.0</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle156" id="N54">(F55+F49+B24)</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A55">AA-</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B55">4.0E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C55">(B55+B54)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D55"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E55">k (&quot;WACC&quot;) (unverschuldet)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*B25*F38)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle130" id="G55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*F38)-1,99%)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H55"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I55"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle160" id="K55">F20/F59</td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A56">A+</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B56">5.0E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C56">(B56+B55)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D56"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle147" id="E56">k Tax Shield</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*B25*F40)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="G56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*F40)-1,99%)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H56"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I56"></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A57">A</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B57">7.000000000000001E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C57">(B57+B56)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D57"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E57">Implizites Beta</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F57">(F54-B19)/(B21-B19)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G57"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A58">A-</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B58">9.0E-4</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C58">(B58+B57)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D58"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle147" id="E58">Wert der Zahlungen ohne TaxShield</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle141" id="F58">F19/(F55+F49-F16)*(1+(F19-(B31-C7)*C8)*(F55-C7)*(1-((1+B31)/(1+F55))^B30))-F23-B33</td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="H58">Wert der Tax Shield Falsch 1</td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle65" id="I58">Wert der Tax Shield Falsch 2</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A59">BBB+</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B59">0.0013</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C59">(B59+B58)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D59"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle148" id="E59">Wert des Tax Shields genau</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle145" id="F59">-F58+F60</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G59"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle130" id="H59">F20/(F56+F49-F16)*(1+(F20-(B31-C7)*C8)*(F56-C7)*(1-((1+B31)/(1+F56))^B30))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle65" id="I59">F20/(F55+F49-F16)*(1+(F19-(B31-C7)*C8)*(F55-C7)*(1-((1+B31)/(1+F55))^B30))</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A60">BBB</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B60">0.0022</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C60">(B60+B59)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D60"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle148" id="E60">Wert der Zahlungen mit Tax Shield</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle145" id="F60">F18/(F54+F49-F16)*(1+(F18-(B31-C7)*C8)*(F54-C7)*(1-((1+B31)/(1+F54))^B30))-F23-B33</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G60"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H60"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I60"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A61">BBB-</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B61">0.0039000000000000003</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C61">(B61+B60)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D61"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle82" id="E61">Wert (W) mit Tax Shield (Min EK)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle85" id="F61">MAX(B28*F22,F58)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G61"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H61"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I61"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle138" id="K61">(F19+F20)/(((1+B19)/(1-F53*B25*F35/(F19+F20))-1)+F49-F16)-F23-B33</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A62">BB+</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B62">0.0067</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C62">(B62+B61)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D62"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle148" id="E62">Enterprise Value</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle149" id="F62">(F61+F23+B33)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G62"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H62"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle163" id="I62"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A63">BB</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B63">0.011699999999999999</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C63">(B63+B62)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D63"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E63"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F63"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G63"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H63"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I63"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="K63"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A64">BB-</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B64">0.0203</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C64">(B64+B63)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D64"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E64">Angemessene Multiples</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F64"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G64"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H64"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I64"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A65">B+</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B65">0.0351</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C65">(B65+B64)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D65"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E65">KBV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F65">F61/F22</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G65"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H65"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I65"></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A66">B</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B66">0.0608</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C66">(B66+B65)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D66"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E66">KGV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F66">F61/F17</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G66"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H66"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I66"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A67">B-</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B67">0.1054</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C67">(B67+B66)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D67"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E67">KUV</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F67">F61/F14</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G67"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H67"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I67"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A68">CCC/CC</td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle137" id="B68">0.1827</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C68">(B68+B67)/2</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D68"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E68">m=EV/EBIT</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F68">(F61+F23)/F15</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G68"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H68"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I68"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E69">PEG</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E70">Tobin-q</td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="D78"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E78">IF(MAX(C7,IF(B30&gt;0,B31,0))&gt;F30,&quot;Wachstum führt zu sinkender EKQ!&quot;,&quot;..&quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F78"></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="14.0">
+    <td></td>
+    <td></td>
+</tr>
+<tr heightInPoints="15.0">
+    <td></td>
+    <td></td>
+</tr>
+</table>
+<!-- build:js scripts/deps.js -->
+<script src="components/angular.js"></script>
+<script src="components/excel-utils.js"></script>
+<!-- endbuild --><!-- scripts/deps.js -->
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild --><!-- scripts/scripts.js -->
+</body>
+</html>

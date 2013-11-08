@@ -1,0 +1,45 @@
+<!doctype html>
+  <html class="no-js">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title>Ratoo</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/main.css"/>
+    </head>
+    <body ng-app="mobApp">
+		<header class="navbar navbar-inverse" role="banner">
+		  <div class="container">
+		      <ul class="nav navbar-nav">
+		        <li>
+		          <a href="#/">Input</a>
+		        </li>
+		        <li>
+		          <a href="#/output">Output</a>
+		        </li>
+		        <li>
+		          <a href="#/settings">Settings</a>
+		        </li>
+		        <li>
+		          <a href="#/help">Help</a>
+		        </li>
+		      </ul>
+		  </div>
+		</header>
+
+        <div id="content"><div ng-view></div></div>
+
+        <!-- build:js scripts/deps.js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+        <!-- endbuild --><!-- scripts/deps.js -->
+
+        <!-- build:js scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/views/main/main.js"></script>
+        <script src="scripts/views/help/help.js"></script>
+        <script src="scripts/views/output/output.js"></script>
+        <script src="scripts/views/settings/settings.js"></script>
+        <!-- endbuild --><!-- scripts/scripts.js -->
+    </body>
+</html>
