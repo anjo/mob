@@ -31,21 +31,64 @@ app.config(['$routeProvider', function ($routeProvider) {
 var structural = angular.module('structuralApp', []);
 
 structural.controller('StructuralCtrl', function ($document, $log) {
+    var functions;
     var types = excelFormulaUtilities.core.types;
     var core = excelFormulaUtilities.core;
 
-    var content = function(i) {
+    var node = function(i) {
         var el = document.getElementById(i);
-        return el ? el.innerHTML : "NULL";
+        return el ? {content: el.innerText, type: el.getAttribute('celltype'), element: el}: {};
     }
 
     var total = {};
+    var functions = [];
+
+    var toFunction = function(token, val) {
+        var n = node(token);
+        switch(n.type) {
+            case 'CELL_TYPE_STRING':
+                val = "function " + token + "() { return '" + val + "'; }";
+                break;
+            case 'CELL_TYPE_NUMERIC':
+                val = "function " + token + "() { return " + val + "; }";
+                break;
+            case 'CELL_TYPE_FORMULA':
+                val = "function " + token + "() { return " + val + "; }";
+                break;
+
+        }
+        return val;
+    }
 
     var fixToken = function(token) {
         if(token.match(/^[A-Z]+[0-9]+$/)) {
             if(!total[token]) {
-                total[token] = "";
-                total[token] = format(content(token));
+                total[token] = "x";
+                var n = node(token);
+                var val = format(n.content);
+                switch(n.type) {
+                    case 'CELL_TYPE_STRING':
+                        val = "function " + token + "() { return '" + val + "'; }";
+                        break;
+                    case 'CELL_TYPE_NUMERIC':
+                        val = "function " + token + "() { return " + val + "; }";
+                        break;
+                    case 'CELL_TYPE_FORMULA':
+                        val = "function " + token + "() { return " + val + "; }";
+                        break;
+
+                }
+                total[token] = val;
+
+                if(val) {
+                    if(n.element) {
+                        n.element.className += " done";
+                    }
+
+                    functions.push(val);
+                } else {
+                    $log.warn("no val", token, n, val);
+                }
             }
             token += "()";
         }
@@ -53,7 +96,14 @@ structural.controller('StructuralCtrl', function ($document, $log) {
     }
 
     var format = function (formula) {
+        if(!formula || typeof formula === 'undefined') {
+            return;
+        }
+        if(!formula.replace) {
+            $log.error("wrong type", formula);
+        }
 
+        formula = formula.replace(/\$/ig,"");
         //Custom callback to format as c#
         var functionStack = [];
 
@@ -62,13 +112,11 @@ structural.controller('StructuralCtrl', function ($document, $log) {
             /*tokenString = (token.value.length === 0) ? "" : token.value.toString(),*/
                 tokenString = tokenStr,
                 directConversionMap = {
-                    "=": "==",
+                    "=": "===",
                     "<>": "!=",
-                    "MIN": "Math.Min",
-                    "MAX": "Math.Max",
-                    "ABS": "Math.ABS",
-                    "SUM": "",
-                    "IF": "IF",
+                    "xMIN": "Math.min",
+                    "xMAX": "Math.max",
+                    "xABS": "Math.abs",
                     "&": "+"
                 },
                 currentFunctionOnStack = functionStack[functionStack.length - 1],
@@ -124,7 +172,7 @@ structural.controller('StructuralCtrl', function ($document, $log) {
                                     break;
                             }
                             break;
-                        case "sum":
+                        case "xsum":
                             outstr = "+";
                             break;
                         default:
@@ -147,7 +195,7 @@ structural.controller('StructuralCtrl', function ($document, $log) {
                             }
                             switch (currentFunctionOnStack.name.toLowerCase()) {
                                 // If in the sum function break aout cell names and add
-                                case "sum":
+                                case "xsum":
                                     //TODO make sure this is working
                                     if (RegExp(":", "gi").test(tokenString)) {
                                         outstr = core.breakOutRanges(tokenString, "+", fixToken);
@@ -215,9 +263,70 @@ structural.controller('StructuralCtrl', function ($document, $log) {
         return cSharpOutput;
     };
 
-    $log.info(format(content("F29")));
-    $log.info(total);
+    var mode = 3;
+    if(mode == 1) {
+        var r = new RegExp('([a-z]+)([0-9]+)', "gi");
+        var sorter = function(a,b) {
+            var x = /([a-z]+)([0-9]+)/gi.exec(a.toString());
+            var y = /([a-z]+)([0-9]+)/gi.exec(b.toString());
+            return x[1] == y[1] ? parseInt(x[2])-parseInt(y[2]) : x[1].charCodeAt(0) - y[1].charCodeAt(0);
+        }
+        var funcs = [];
+
+        for(var col = 0; col < 25; col++) {
+            for(var row = 1; row < 100; row++) {
+                var idx = String.fromCharCode(65 + col) + "" + row;
+                var n = node(idx);
+                switch(n.type) {
+                    case 'CELL_TYPE_FORMULA':
+                        total[idx] = toFunction(idx, format(n.content));
+                        break;
+                    case 'CELL_TYPE_NUMERIC':
+                    case 'CELL_TYPE_STRING':
+                        total[idx] = toFunction(idx, n.content);
+                        break;
+                }
+                if(total[idx]) {
+                    //$log.info("processed: " + idx + "-> "  + n.content + " -->" + total[idx])
+                    funcs.push(total[idx]);
+                }
+            }
+        }
+         var res = funcs.sort(sorter).join(";\n");
+        $log.info(res);
+        //$log.info("G5", C5(), F14(), F15());
+        alert(res);
+    } else if(mode == 2) {
+        var n = node('F47');
+        $log.info("processing: " + idx + "-> "  + n.content + "-->" + format(n.content))
+    } else if(mode == 3) {
+        for(var col = 0; col < 25; col++) {
+            for(var row = 1; row < 100; row++) {
+                var idx = String.fromCharCode(65 + col) + "" + row;
+                var n = node(idx);
+                var func = window[idx];
+                switch(n.type) {
+                    case 'CELL_TYPE_FORMULA':
+                    case 'CELL_TYPE_NUMERIC':
+                    case 'CELL_TYPE_STRING':
+                        try {
+                            total[idx] = func();
+                        } catch(e) {
+                            total[idx] = e;
+                        }
+                        n.element.setAttribute('result', total[idx]);
+                        $log.info(idx, total[idx]);
+                        break;
+                }
+            }
+        }
+    }
+    // alert(res)
+    //$log.info(format(node("F29").content));
     //$log.info(format("B6*IF(B6>0,(1-B16),1)"));
     //$log.info(format("F15/((F23-B33)*(B19+B24+IF(B27=1,F43,F44)))"));
     //$log.info(format("AVERAGE(F11:H11)"));
+    //$log.info("{\n" + functions.sort(function(a,b) {
+    //    return a.toString() == b.toString() ? 0 : a.toString() < b.toString() ? -1 : 1;
+    //}).join(",\n") + "\n}");
 });

@@ -1,7 +1,7 @@
-@import "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css";
+@ximport "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css";
 
 header {
-	background-color: black;
+    background-color: black;
 }
 
 *[type="float"] {
@@ -26,3 +26,32 @@ header {
 .table {
     width: 100%;
 }
+
+td:hover:before {
+    content: attr(id)  ': '  attr(result);
+    outline: 1px solid black;
+    -moz-outline: 1px solid black;
+    background: blue;
+    color: white;
+    text-align: left;
+    text-transform: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: small;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+td[celltype='CELL_TYPE_FORMULA'] {
+    background-color: red;
+}
+
+td[celltype='CELL_TYPE_STRING'], td[celltype='CELL_TYPE_NUMERIC'] {
+    background-color: greenyellow;
+}
+
+td.done {
+    background-color: grey;
+}
+

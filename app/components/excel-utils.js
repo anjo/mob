@@ -796,7 +796,7 @@
     //    breakOutRanges("A1:B2", "+"); //Returns A1+A2+B1+B2
 
     function breakOutRanges(rangeStr, delimStr, fixUp){
-        
+
         //Quick Check to see if if rangeStr is a valid range
         if ( !RegExp("[a-z]+[0-9]+:[a-z]+[0-9]+","gi").test(rangeStr) ){
             throw "This is not a valid range: " + rangeStr;
@@ -807,7 +807,7 @@
         
             startRow = parseInt(range[0].match(/[0-9]+/gi)[0]),
             startCol = range[0].match(/[A-Z]+/gi)[0],
-            startColDec = fromBase26(startCol)
+            startColDec = fromBase26(startCol),
         
             endRow =  parseInt(range[1].match(/[0-9]+/gi)[0]),
             endCol = range[1].match(/[A-Z]+/gi)[0],
@@ -829,7 +829,6 @@
         fixUp = fixUp || function(input) {
             return input;
         }
-        
         for(; curRow <= totalRows; curRow+=1){
             for(; curCol < totalCols; curCol+=1){
                 // Get the current cell id

@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="styles/main.css"/>
 </head>
-<body ng-app="structuralApp">
-<table border="1" name="Strukturell" defaultRowHeightInPoints="14.0" defaultColumnWidth="10" ng-controller="StructuralCtrl">
+<body ng-app="structuralApp" ng-controller="StructuralCtrl">
+<table border="1" name="Strukturell" defaultRowHeightInPoints="14.0" defaultColumnWidth="10">
 <tr heightInPoints="21.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle89" id="A1">Quick Value &amp; Rating Calclator</td>
     <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="C1">der FutureValue Group AG</td>
 </tr>
 <tr heightInPoints="19.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle164" id="A2">Struktureller Aufbau</td>
@@ -60,6 +61,9 @@
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="L5"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="M5"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="N5"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="P5"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A6">EBIT (erwartet, nachhaltig)</td>
@@ -96,6 +100,8 @@
     <td></td>
     <td></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="L8">B6*(1-$B$16)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle138" id="M8">C6*(1-$B$16)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle138" id="N8">D6*(1-$B$16)</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle63" id="A9">Eigenkapital</td>
@@ -122,6 +128,8 @@
     <td></td>
     <td></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle152" id="L10">L8-F8</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle152" id="M10">M8-G8</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle152" id="N10">N8-H8</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A11"></td>
@@ -158,6 +166,7 @@
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle150" id="K13"></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle161" id="L13">(F19*F55+F20*F56)/(F19+F11)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle161" id="M13">(F19*G55+F20*G56)/(F19+F11)</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A14"></td>
@@ -171,6 +180,8 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I14"></td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle161" id="L14">F54</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle161" id="M14">G54</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A15">allgemeine Parameter</td>
@@ -196,6 +207,8 @@
     <td></td>
     <td></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle159" id="L16">L13/L14</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle159" id="M16">M13/M14</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle162" id="N16"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
@@ -207,6 +220,10 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G17"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H17"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I17"></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle160" id="L17">L13-L14</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle160" id="M17">M13-M14</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A18">Marktparameter</td>
@@ -217,6 +234,7 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F18">SUM(F9:H9)/3</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="G18"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H18"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I18"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A19">Zins rf (ggf. nachhaltig)</td>
@@ -231,6 +249,9 @@
     <td></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="K19">F18/F19</td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle150" id="N19"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle153" id="O19"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A20">Standardabweichung Marktrendite</td>
@@ -254,6 +275,9 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H21"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I21"></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="M21"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
@@ -264,6 +288,11 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle74" id="F22">C9</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G22"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H22"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I22"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="M22"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A23">Parameter EXPERT</td>
@@ -340,6 +369,7 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F29">F15/((F23-B33)*(B19+B24+IF(B27=1,F43,F44)))</td>
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H29"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I29"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A30">Konverzenzphase (Wachstumsdauer)</td>
@@ -361,6 +391,7 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F31">IF(B36&gt;0,(C10-B33)/(F15+B36),&quot;n.a.&quot;)</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G31"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H31"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I31"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A32">Konvergenz ROCE -&gt; WACC</td>
@@ -370,6 +401,8 @@
     <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E32">impl. FKZinssatz</td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F32">(1+F49+B19)/(1-B24)-1</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G32"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H32"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I32"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A33">Pensionrückstellungen</td>
@@ -382,6 +415,9 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H33"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I33"></td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="L33">F18/F19</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="M33">1/L33</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A34">Zins Pensionsrückstellungen</td>
@@ -392,6 +428,7 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F34"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G34"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H34"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I34"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A35">TaxShield</td>
@@ -404,6 +441,9 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H35"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle140" id="I35"></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="M35">F20/M33</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle129" id="A36">Abschreibungen</td>
@@ -424,6 +464,8 @@
     <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E37">Standardabweichung FCF (unverschuldet)</td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle142" id="F37">SQRT((F10-H10)^2+(F10-G10)^2+(H10-G10)^2)/6</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H37"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I37"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A38">VERSTECKTE PARAMETER</td>
@@ -456,6 +498,7 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle154" id="F40">F39/F20</td>
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H40"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I40"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A41">NennerMult1PD1</td>
@@ -557,6 +600,8 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I49"></td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="L49"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="M49"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_BLANK" class="egstyle69" id="A50"></td>
@@ -567,6 +612,7 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle83" id="F50">INDEX(A52:A68,MATCH(F49,C52:C68,1))</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="G50"></td>
     <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I50"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle66" id="A51">Ratingtabelle</td>
@@ -575,6 +621,9 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D51"></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H51"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I51"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A52">AAA- / AAA / AAA +</td>
@@ -587,6 +636,7 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle147" id="H52"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I52"></td>
     <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="K52">(F56*F20+F54*F19)/(F18)</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A53">AA+</td>
@@ -598,6 +648,8 @@
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H53"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I53"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="K53"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A54">AA</td>
@@ -605,8 +657,8 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C54">(B54+B53)/2</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D54"></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E54">k (&quot;WACC&quot;) (verschuldet)</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*B25*F36)-1,99%)</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="G54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*F36)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle77" id="F54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*B25*F36)*(1-0.0199))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="G54">IF(1-F53*B25*F36&gt;0,(1+B19)/(1-F53*F36)*(1-0.0199))</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle130" id="H54"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I54"></td>
     <td></td>
@@ -614,6 +666,7 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="L54"></td>
     <td cellType="CELL_TYPE_NUMERIC" class="egstyle138" id="M54">1.0</td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle156" id="N54">(F55+F49+B24)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="O54"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A55">AA-</td>
@@ -621,13 +674,15 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C55">(B55+B54)/2</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D55"></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle139" id="E55">k (&quot;WACC&quot;) (unverschuldet)</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*B25*F38)-1,99%)</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle130" id="G55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*F38)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*B25*F38)*(1-0.0199))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle130" id="G55">IF(1-F53*B25*F38&gt;0,(1+B19)/(1-F53*F38)*(1-0.0199))</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H55"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I55"></td>
     <td></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle160" id="K55">F20/F59</td>
     <td></td>
+    <td cellType="CELL_TYPE_NUMERIC" class="egstyle15" id="M55">5.959927433218841</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle156" id="N55">F56+F49+B24</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A56">A+</td>
@@ -635,12 +690,17 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle137" id="C56">(B56+B55)/2</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="D56"></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle147" id="E56">k Tax Shield</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*B25*F40)-1,99%)</td>
-    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="G56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*F40)-1,99%)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle143" id="F56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*B25*F40)*(1-0.0199))</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="G56">IF(1-F53*B25*F40&gt;0,(1+B19)/(1-F53*F40)*(1-0.0199))</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H56"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I56"></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle15" id="O56">(N54*M54+N55*M55)/(M54+M55)</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle158" id="P56">O56-K55</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A57">A</td>
@@ -661,6 +721,8 @@
     <td></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle63" id="H58">Wert der Tax Shield Falsch 1</td>
     <td cellType="CELL_TYPE_STRING" class="egstyle65" id="I58">Wert der Tax Shield Falsch 2</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="K58"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A59">BBB+</td>
@@ -674,6 +736,9 @@
     <td cellType="CELL_TYPE_FORMULA" class="egstyle65" id="I59">F20/(F55+F49-F16)*(1+(F19-(B31-C7)*C8)*(F55-C7)*(1-((1+B31)/(1+F55))^B30))</td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle152" id="L59"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="N59"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A60">BBB</td>
@@ -686,6 +751,7 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H60"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I60"></td>
     <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle15" id="K60">F19/(((1+B19)/(1-F53*B25*F37/F19)-1)+F49-F16)-F23-B33</td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A61">BBB-</td>
@@ -699,6 +765,8 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I61"></td>
     <td></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle138" id="K61">(F19+F20)/(((1+B19)/(1-F53*B25*F35/(F19+F20))-1)+F49-F16)-F23-B33</td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle151" id="M61"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A62">BB+</td>
@@ -723,6 +791,8 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I63"></td>
     <td></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="K63"></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle155" id="M63"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A64">BB-</td>
@@ -746,6 +816,9 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H65"></td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I65"></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle156" id="M65"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td cellType="CELL_TYPE_STRING" class="egstyle69" id="A66">B</td>
@@ -786,6 +859,10 @@
     <td></td>
     <td></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E69">PEG</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F69">IF(B30=0,F66/C7,F66/B31)/100</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G69"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H69"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I69"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
@@ -793,44 +870,77 @@
     <td></td>
     <td></td>
     <td cellType="CELL_TYPE_STRING" class="egstyle130" id="E70">Tobin-q</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle71" id="F70">(F61+C10)/C8</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G70"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H70"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I70"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F71"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G71"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H71"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle65" id="I71"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle68" id="E72">Warnmeldungen:</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F72"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G72"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H72"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E73">IF(F27-F54&gt;0.05,&quot;keine Renditekonvergenz&quot;,&quot;.. &quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F73"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G73"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="H73"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
     <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E74">IF(F16&lt;B19*0.99,&quot;kein Inflationsausgleich&quot;,&quot;.. &quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F74"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="G74"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="H74"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E75">IF(OR(F53&lt;0.175,F53&gt;0.3),&quot;Marktpreis Risiko ungewöhnlich&quot;,&quot;.. &quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F75"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="G75"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E76">IF(F61&lt;C9,&quot;Substanz dominiert Wert&quot;,&quot;..&quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F76"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
     <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E77">IF(F49&gt;0.07,&quot;akute Krise&quot;,&quot;..&quot;)</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F77"></td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="G77">-($B$19+$F$49+$B$24)*($C$10-$B$33)-$B$34*$B$33</td>
 </tr>
 <tr heightInPoints="15.0">
     <td></td>
@@ -839,34 +949,59 @@
     <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="D78"></td>
     <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="E78">IF(MAX(C7,IF(B30&gt;0,B31,0))&gt;F30,&quot;Wachstum führt zu sinkender EKQ!&quot;,&quot;..&quot;)</td>
     <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F78"></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle87" id="G78">todo</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle87" id="H78"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle88" id="I78"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="E79"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle139" id="F79"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="E80"></td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F80"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E81">Adjustierungen Anpassungsphase</td>
+    <td cellType="CELL_TYPE_BLANK" class="egstyle63" id="F81"></td>
 </tr>
 <tr heightInPoints="14.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle63" id="E82">Eigenkapital</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle63" id="F82">B30*((F27+MIN(F54,1.5*B21))/2)*(1-$B$16)*C8+G77</td>
 </tr>
 <tr heightInPoints="15.0">
     <td></td>
     <td></td>
+    <td></td>
+    <td></td>
+    <td cellType="CELL_TYPE_STRING" class="egstyle87" id="E83">Liquidität</td>
+    <td cellType="CELL_TYPE_FORMULA" class="egstyle87" id="F83">IF(B32=1,B30*(F27+MIN(F54,1.5*B21))/2*C8,0)</td>
 </tr>
 </table>
 <!-- build:js scripts/deps.js -->
 <script src="components/angular.js"></script>
 <script src="components/excel-utils.js"></script>
+<script src="scripts/excel-support.js"></script>
 <!-- endbuild --><!-- scripts/deps.js -->
 
 <!-- build:js scripts/scripts.js -->
+<script src="scripts/excel.js"></script>
 <script src="scripts/app.js"></script>
 <!-- endbuild --><!-- scripts/scripts.js -->
 </body>
