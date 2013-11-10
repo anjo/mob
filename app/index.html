@@ -31,15 +31,19 @@
         <div id="content"><div ng-view></div></div>
 
         <!-- build:js scripts/deps.js -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+        <script src="components/angular/angular.js"></script>
         <!-- endbuild --><!-- scripts/deps.js -->
 
         <!-- build:js scripts/scripts.js -->
+        <script src="scripts/excel-support.js"></script>
+        <script src="scripts/excel.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/views/main/main.js"></script>
         <script src="scripts/views/help/help.js"></script>
         <script src="scripts/views/output/output.js"></script>
         <script src="scripts/views/settings/settings.js"></script>
+        <script src="scripts/engine.js"></script>
+        <script src="scripts/data.js"></script>
         <!-- endbuild --><!-- scripts/scripts.js -->
     </body>
 </html>

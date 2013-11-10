@@ -1,326 +1,335 @@
-function A1() { return 'Quick Value & Rating Calclator'; };
-function A2() { return 'Struktureller Aufbau'; };
-function A3() { return 'Input allgemein'; };
-function A4() { return 'Jahresabschluss'; };
-function A5() { return 'Umsatz'; };
-function A6() { return 'EBIT (erwartet, nachhaltig)'; };
-function A7() { return 'Wachstum w (langfristig)'; };
-function A8() { return 'Bilanzsumme (betriebsnotw. CE)'; };
-function A9() { return 'Eigenkapital'; };
-function A10() { return 'verz. Netto-FK (inkl. Pensionsrückst.)'; };
-function A12() { return 'Rating'; };
-function A13() { return 'Vorhandenes Rating'; };
-function A15() { return 'allgemeine Parameter'; };
-function A16() { return 'Steuersatz s'; };
-function A18() { return 'Marktparameter'; };
-function A19() { return 'Zins rf (ggf. nachhaltig)'; };
-function A20() { return 'Standardabweichung Marktrendite'; };
-function A21() { return 'Erwartungswert Marktrendite'; };
-function A23() { return 'Parameter EXPERT'; };
-function A24() { return 'Verwaltungsaufschlag'; };
-function A25() { return 'Risikodiversifikationsfaktor d'; };
-function A26() { return 'Investitionsdauer'; };
-function A27() { return 'Vorhandenes Rating verwenden'; };
-function A28() { return 'Werthaltigkeit Eigenkapital'; };
-function A29() { return 'FutureValue Group-PD-Schätzung'; };
-function A30() { return 'Konverzenzphase (Wachstumsdauer)'; };
-function A31() { return 'Aktuelles Wachstum'; };
-function A32() { return 'Konvergenz ROCE -> WACC'; };
-function A33() { return 'Pensionrückstellungen'; };
-function A34() { return 'Zins Pensionsrückstellungen'; };
-function A35() { return 'TaxShield'; };
-function A36() { return 'Abschreibungen'; };
-function A38() { return 'VERSTECKTE PARAMETER'; };
-function A39() { return 'ZählerPD1'; };
-function A40() { return 'NennerKonstantePD1'; };
-function A41() { return 'NennerMult1PD1'; };
-function A42() { return 'NennerMult2PD1'; };
-function A43() { return 'ZählerPD2'; };
-function A44() { return 'NennerKonstantePD2'; };
-function A45() { return 'NennerMult1PD2'; };
-function A46() { return 'ZählerPD3'; };
-function A47() { return 'NennerKonstantePD3'; };
-function A48() { return 'NennerMult1PD3'; };
-function A49() { return 'NennerMult2PD3'; };
-function A51() { return 'Ratingtabelle'; };
-function A52() { return 'AAA- / AAA / AAA +'; };
-function A53() { return 'AA+'; };
-function A54() { return 'AA'; };
-function A55() { return 'AA-'; };
-function A56() { return 'A+'; };
-function A57() { return 'A'; };
-function A58() { return 'A-'; };
-function A59() { return 'BBB+'; };
-function A60() { return 'BBB'; };
-function A61() { return 'BBB-'; };
-function A62() { return 'BB+'; };
-function A63() { return 'BB'; };
-function A64() { return 'BB-'; };
-function A65() { return 'B+'; };
-function A66() { return 'B'; };
-function A67() { return 'B-'; };
-function A68() { return 'CCC/CC'; };
-function B4() { return 'min'; };
-function B6() { return 50.0; };
-function B13() { return 'BB'; };
-function B16() { return 0.3; };
-function B19() { return 0.03; };
-function B20() { return 0.2; };
-function B21() { return 0.08; };
-function B24() { return 0.01; };
-function B25() { return 1.0; };
-function B27() { return 0.0; };
-function B28() { return 1.0; };
-function B29() { return 0.0; };
-function B30() { return 0.0; };
-function B31() { return 0.1; };
-function B32() { return 0.0; };
-function B33() { return 0.0; };
-function B34() { return 0.06; };
-function B35() { return 1.0; };
-function B36() { return 10.0; };
-function B39() { return 0.265; };
-function B40() { return -0.41; };
-function B41() { return 7.42; };
-function B42() { return 11.2; };
-function B43() { return 0.265; };
-function B44() { return -0.41; };
-function B45() { return 0.41; };
-function B46() { return 0.39; };
-function B47() { return 0.09; };
-function B48() { return 10.8; };
-function B49() { return 7.6; };
-function B51() { return 'Mittlere PDs'; };
-function B52() { return 1.0E-4; };
-function B53() { return 2.0E-4; };
-function B54() { return 3.0E-4; };
-function B55() { return 4.0E-4; };
-function B56() { return 5.0E-4; };
-function B57() { return 7.000000000000001E-4; };
-function B58() { return 9.0E-4; };
-function B59() { return 0.0013; };
-function B60() { return 0.0022; };
-function B61() { return 0.0039000000000000003; };
-function B62() { return 0.0067; };
-function B63() { return 0.011699999999999999; };
-function B64() { return 0.0203; };
-function B65() { return 0.0351; };
-function B66() { return 0.0608; };
-function B67() { return 0.1054; };
-function B68() { return 0.1827; };
-function C1() { return 'der FutureValue Group AG'; };
-function C4() { return 'Mittel'; };
-function C5() { return 1000.0; };
-function C6() { return 100.0; };
-function C7() { return 0.0; };
-function C8() { return 500.0; };
-function C9() { return 150.0; };
-function C10() { return 350.0; };
-function C13() { return 'Dropdownliste'; };
-function C27() { return '0=nein, 1=ja'; };
-function C29() { return '0=Worst Case; 1=Gemittelt'; };
-function C31() { return 'ohne FcF-Wirkung'; };
-function C35() { return '0: nein; 1: ja'; };
-function C49() { return 'PD-Grenzen'; };
-function C51() { return 'Grenzen'; };
-function C52() { return 0.0; };
-function C53() { return (B53()+B52())/2; };
-function C54() { return (B54()+B53())/2; };
-function C55() { return (B55()+B54())/2; };
-function C56() { return (B56()+B55())/2; };
-function C57() { return (B57()+B56())/2; };
-function C58() { return (B58()+B57())/2; };
-function C59() { return (B59()+B58())/2; };
-function C60() { return (B60()+B59())/2; };
-function C61() { return (B61()+B60())/2; };
-function C62() { return (B62()+B61())/2; };
-function C63() { return (B63()+B62())/2; };
-function C64() { return (B64()+B63())/2; };
-function C65() { return (B65()+B64())/2; };
-function C66() { return (B66()+B65())/2; };
-function C67() { return (B67()+B66())/2; };
-function C68() { return (B68()+B67())/2; };
-function D4() { return 'Max'; };
-function D6() { return 150.0; };
-function E3() { return 'Output'; };
-function E4() { return 'Jahresabschluss'; };
-function E5() { return 'Zinsaufwand'; };
-function E6() { return 'Gewinn vor Steuern (nachhaltig)'; };
-function E7() { return 'Steuern'; };
-function E8() { return 'Gewinn nach Steuer (nachhaltig)'; };
-function E9() { return 'fcF verschuldet (nachhaltig)'; };
-function E10() { return 'fcF unverschuldet (nachhaltig)'; };
-function E11() { return 'Tax Shield Effekt'; };
-function E13() { return 'Erwartungswerte Jahresabschluss'; };
-function E14() { return 'Umsatz'; };
-function E15() { return 'EBIT (erwartet, nachhaltig)'; };
-function E16() { return 'Wachstum w (Vergleichswert)'; };
-function E17() { return 'Gewinn (erwartet, nachhaltig, nSt.)'; };
-function E18() { return 'fcF verschuldet (erwartet, nachhaltig)'; };
-function E19() { return 'fcF unverschuldet (erwartet, nachhaltig)'; };
-function E20() { return 'Tax Shield Effekt'; };
-function E21() { return 'Bilanzsumme (betriebsnot. CE)'; };
-function E22() { return 'Eigenkapital'; };
-function E23() { return 'verz. Netto-FK (inkl. Pensionsrückst.)'; };
-function E25() { return 'Finanzkennzahlen (gemäß Erwartungswerte)'; };
-function E26() { return 'EKQ'; };
-function E27() { return 'ROCE'; };
-function E28() { return 'EBIT-Marge'; };
-function E29() { return 'ZDQ'; };
-function E30() { return 'EKR'; };
-function E31() { return 'Dyn. VG'; };
-function E32() { return 'impl. FKZinssatz'; };
-function E34() { return 'Risikokennzahlen'; };
-function E35() { return 'Standardabweichung FCF (verschuldet)'; };
-function E36() { return 'Ertragsrisiko (V fcf (verschuldet))'; };
-function E37() { return 'Standardabweichung FCF (unverschuldet)'; };
-function E38() { return 'Ertragsrisiko (V fcf (unverschuldet))'; };
-function E39() { return 'Standardabweichung Tax Shield'; };
-function E40() { return 'Ertragsrisiko (V fcf (unverschuldet))'; };
-function E42() { return 'Rating'; };
-function E43() { return 'PD aus vorhandenes Rating'; };
-function E44() { return 'Geschätztes PD FutureValue Group 1'; };
-function E45() { return 'Geschätztes PD FutureValue Group 2'; };
-function E46() { return 'Geschätztes PD FutureValue Group 3'; };
-function E47() { return 'WorstCase OD'; };
-function E48() { return 'Mittleres PD'; };
-function E49() { return 'Verwendetes PD'; };
-function E50() { return 'RatingNote FutureValue Group'; };
-function E52() { return 'Bewertung'; };
-function E53() { return 'Marktpreis Risiko (Lambda)'; };
-function E54() { return 'k ("WACC") (verschuldet)'; };
-function E55() { return 'k ("WACC") (unverschuldet)'; };
-function E56() { return 'k Tax Shield'; };
-function E57() { return 'Implizites Beta'; };
-function E58() { return 'Wert der Zahlungen ohne TaxShield'; };
-function E59() { return 'Wert des Tax Shields genau'; };
-function E60() { return 'Wert der Zahlungen mit Tax Shield'; };
-function E61() { return 'Wert (W) mit Tax Shield (Min EK)'; };
-function E62() { return 'Enterprise Value'; };
-function E64() { return 'Angemessene Multiples'; };
-function E65() { return 'KBV'; };
-function E66() { return 'KGV'; };
-function E67() { return 'KUV'; };
-function E68() { return 'm=EV/EBIT'; };
-function E69() { return 'PEG'; };
-function E70() { return 'Tobin-q'; };
-function E72() { return 'Warnmeldungen:'; };
-function E73() { return IF(F27()-F54()>0.05,"keine Renditekonvergenz",".. "); };
-function E74() { return IF(F16()<B19()*0.99,"kein Inflationsausgleich",".. "); };
-function E75() { return IF(OR(F53()<0.175,F53()>0.3),"Marktpreis Risiko ungewöhnlich",".. "); };
-function E76() { return IF(F61()<C9(),"Substanz dominiert Wert",".."); };
-function E77() { return IF(F49()>0.07,"akute Krise",".."); };
-function E78() { return IF(MAX(C7(),IF(B30()>0,B31(),0))>F30(),"Wachstum führt zu sinkender EKQ!",".."); };
-function E81() { return 'Adjustierungen Anpassungsphase'; };
-function E82() { return 'Eigenkapital'; };
-function E83() { return 'Liquidität'; };
-function F4() { return 'min'; };
-function F6() { return B6()-G5(); };
-function F7() { return MAX(0,F6()*B16()); };
-function F8() { return F6()-F7(); };
-function F9() { return B6()-C7()*C8()-F7(); };
-function F10() { return B6()*IF(B6()>0,(1-B16()),1); };
-function F11() { return F9()-F10(); };
-function F14() { return C5(); };
-function F15() { return SUM([B6(),C6(),D6()])/3; };
-function F16() { return C7(); };
-function F17() { return AVERAGE([F8(),G8(),H8()]); };
-function F18() { return SUM([F9(),G9(),H9()])/3; };
-function F19() { return SUM([F10(),G10(),H10()])/3; };
-function F20() { return AVERAGE([F11(),G11(),H11()]); };
-function F21() { return C8(); };
-function F22() { return C9(); };
-function F23() { return C10(); };
-function F26() { return F22()/F21(); };
-function F27() { return F15()/F21(); };
-function F28() { return F15()/F14(); };
-function F29() { return F15()/((F23()-B33())*(B19()+B24()+IF(B27()===1,F43(),F44()))); };
-function F30() { return F17()/C9(); };
-function F31() { return IF(B36()>0,(C10()-B33())/(F15()+B36()),"n.a."); };
-function F32() { return (1+F49()+B19())/(1-B24())-1; };
-function F35() { return SQRT((F9()-H9())^2+(F9()-G9())^2+(H9()-G9())^2)/6; };
-function F36() { return F35()/F18(); };
-function F37() { return SQRT((F10()-H10())^2+(F10()-G10())^2+(H10()-G10())^2)/6; };
-function F38() { return F37()/F19(); };
-function F39() { return SQRT((F13()-H12())^2+(F13()-G12())^2+(H12()-G12())^2)/6; };
-function F40() { return F39()/F20(); };
-function F43() { return VLOOKUP(B13(),[A52(),B52(),A53(),B53(),A54(),B54(),A55(),B55(),A56(),B56(),A57(),B57(),A58(),B58(),A59(),B59(),A60(),B60(),A61(),B61(),A62(),B62(),A63(),B63(),A64(),B64(),A65(),B65(),A66(),B66(),A67(),B67(),A68(),B68()],2,FALSE); };
-function F44() { return B39()/(1+EXP(B40()+B41()*MAX(0,F26())+B42()*MAX(F27(),-0.1))); };
-function F45() { return B43()/(1+EXP(-B44()+B45()*F29())); };
-function F46() { return B46()/(1+EXP(B47()+B48()*MAX(0,F26())+B49()*MAX(F28(),-0.1))); };
-function F47() { return MAX([F44(),F45(),F46()]); };
-function F48() { return AVERAGE([F44(),F45(),F46()]); };
-function F49() { return IF(B27()===1,F43(),IF(B29()===0,F47(),F48())); };
-function F50() { return INDEX([A52(),A53(),A54(),A55(),A56(),A57(),A58(),A59(),A60(),A61(),A62(),A63(),A64(),A65(),A66(),A67(),A68()],MATCH(F49(),[C52(),C53(),C54(),C55(),C56(),C57(),C58(),C59(),C60(),C61(),C62(),C63(),C64(),C65(),C66(),C67(),C68()],1)); };
-function F53() { return (B21()-B19())/B20(); };
-function F54() { return IF(1-F53()*B25()*F36()>0,(1+B19())/(1-F53()*B25()*F36())*(1-0.0199)); };
-function F55() { return IF(1-F53()*B25()*F38()>0,(1+B19())/(1-F53()*B25()*F38())*(1-0.0199)); };
-function F56() { return IF(1-F53()*B25()*F40()>0,(1+B19())/(1-F53()*B25()*F40())*(1-0.0199)); };
-function F57() { return (F54()-B19())/(B21()-B19()); };
-function F58() { return F19()/(F55()+F49()-F16())*(1+(F19()-(B31()-C7())*C8())*(F55()-C7())*(1-((1+B31())/(1+F55()))^B30()))-F23()-B33(); };
-function F59() { return -F58()+F60(); };
-function F60() { return F18()/(F54()+F49()-F16())*(1+(F18()-(B31()-C7())*C8())*(F54()-C7())*(1-((1+B31())/(1+F54()))^B30()))-F23()-B33(); };
-function F61() { return MAX(B28()*F22(),F58()); };
-function F62() { return (F61()+F23()+B33()); };
-function F65() { return F61()/F22(); };
-function F66() { return F61()/F17(); };
-function F67() { return F61()/F14(); };
-function F68() { return (F61()+F23())/F15(); };
-function F69() { return IF(B30()===0,F66()/C7(),F66()/B31())/100; };
-function F70() { return (F61()+C10())/C8(); };
-function F82() { return B30()*((F27()+MIN(F54(),1.5*B21()))/2)*(1-B16())*C8()+G77(); };
-function F83() { return IF(B32()===1,B30()*(F27()+MIN(F54(),1.5*B21()))/2*C8(),0); };
-function G4() { return 'Norm'; };
-function G5() { return (B19()+F49()+B24())*(C10()-B33())-B34()*B33(); };
-function G6() { return C6()-G5(); };
-function G7() { return MAX(0,G6()*B16()); };
-function G8() { return G6()-G7(); };
-function G9() { return C6()-C7()*C8()-G7(); };
-function G10() { return C6()*IF(C6()>0,(1-B16()),1); };
-function G11() { return G9()-G10(); };
-function G27() { return 'bezug auf F33 sonst zirkelbezug'; };
-function G30() { return 'theoretsich richtiger (vertr.) Zinssatz um auf eine erwartete Rendite in Höhe von rf+Aufschlag zu kommen'; };
-function G54() { return IF(1-F53()*B25()*F36()>0,(1+B19())/(1-F53()*F36())*(1-0.0199)); };
-function G55() { return IF(1-F53()*B25()*F38()>0,(1+B19())/(1-F53()*F38())*(1-0.0199)); };
-function G56() { return IF(1-F53()*B25()*F40()>0,(1+B19())/(1-F53()*F40())*(1-0.0199)); };
-function G77() { return -(B19()+F49()+B24())*(C10()-B33())-B34()*B33(); };
-function G78() { return 'todo'; };
-function H4() { return 'Max'; };
-function H6() { return D6()-G5(); };
-function H7() { return MAX(0,H6()*B16()); };
-function H8() { return H6()-H7(); };
-function H9() { return D6()-C7()*C8()-H7(); };
-function H10() { return D6()*IF(D6()>0,(1-B16()),1); };
-function H11() { return H9()-H10(); };
-function H58() { return 'Wert der Tax Shield Falsch 1'; };
-function H59() { return F20()/(F56()+F49()-F16())*(1+(F20()-(B31()-C7())*C8())*(F56()-C7())*(1-((1+B31())/(1+F56()))^B30())); };
-function I58() { return 'Wert der Tax Shield Falsch 2'; };
-function I59() { return F20()/(F55()+F49()-F16())*(1+(F19()-(B31()-C7())*C8())*(F55()-C7())*(1-((1+B31())/(1+F55()))^B30())); };
-function K19() { return F18()/F19(); };
-function K52() { return (F56()*F20()+F54()*F19())/(F18()); };
-function K55() { return F20()/F59(); };
-function K60() { return 'F19/(((1+B19)/(1-F53*B25*F37/F19)-1)+F49-F16)-F23-B33'; };
-function K61() { return '(F19+F20)/(((1+B19)/(1-F53*B25*F35/(F19+F20))-1)+F49-F16)-F23-B33'; };
-function L8() { return B6()*(1-B16()); };
-function L10() { return L8()-F8(); };
-function L13() { return (F19()*F55()+F20()*F56())/(F19()+F11()); };
-function L14() { return F54(); };
-function L16() { return L13()/L14(); };
-function L17() { return L13()-L14(); };
-function L33() { return F18()/F19(); };
-function M8() { return C6()*(1-B16()); };
-function M10() { return M8()-G8(); };
-function M13() { return (F19()*G55()+F20()*G56())/(F19()+F11()); };
-function M14() { return G54(); };
-function M16() { return M13()/M14(); };
-function M17() { return M13()-M14(); };
-function M33() { return 1/L33(); };
-function M35() { return F20()/M33(); };
-function M54() { return 1.0; };
-function M55() { return 5.959927433218841; };
-function N8() { return D6()*(1-B16()); };
-function N10() { return N8()-H8(); };
-function N54() { return (F55()+F49()+B24()); };
-function N55() { return F56()+F49()+B24(); };
-function O56() { return (N54()*M54()+N55()*M55())/(M54()+M55()); };
-function P56() { return O56()-K55(); }
+var data = {"A1":"Quick Value & Rating Calclator","A2":"Struktureller Aufbau","A3":"Input allgemein","A4":"Jahresabschluss","A5":"Umsatz","A6":"EBIT (erwartet, nachhaltig)","A7":"Wachstum w (langfristig)","A8":"Bilanzsumme (betriebsnotw. CE)","A9":"Eigenkapital","A10":"verz. Netto-FK (inkl. Pensionsrückst.)","A12":"Rating","A13":"Vorhandenes Rating","A15":"allgemeine Parameter","A16":"Steuersatz s","A18":"Marktparameter","A19":"Zins rf (ggf. nachhaltig)","A20":"Standardabweichung Marktrendite","A21":"Erwartungswert Marktrendite","A23":"Parameter EXPERT","A24":"Verwaltungsaufschlag","A25":"Risikodiversifikationsfaktor d","A26":"Investitionsdauer","A27":"Vorhandenes Rating verwenden","A28":"Werthaltigkeit Eigenkapital","A29":"FutureValue Group-PD-Schätzung","A30":"Konverzenzphase (Wachstumsdauer)","A31":"Aktuelles Wachstum","A32":"Konvergenz ROCE -> WACC","A33":"Pensionrückstellungen","A34":"Zins Pensionsrückstellungen","A35":"TaxShield","A36":"Abschreibungen","A38":"VERSTECKTE PARAMETER","A39":"ZählerPD1","A40":"NennerKonstantePD1","A41":"NennerMult1PD1","A42":"NennerMult2PD1","A43":"ZählerPD2","A44":"NennerKonstantePD2","A45":"NennerMult1PD2","A46":"ZählerPD3","A47":"NennerKonstantePD3","A48":"NennerMult1PD3","A49":"NennerMult2PD3","A51":"Ratingtabelle","A52":"AAA- / AAA / AAA +","A53":"AA+","A54":"AA","A55":"AA-","A56":"A+","A57":"A","A58":"A-","A59":"BBB+","A60":"BBB","A61":"BBB-","A62":"BB+","A63":"BB","A64":"BB-","A65":"B+","A66":"B","A67":"B-","A68":"CCC/CC","B4":"min","B6":50,"B13":"BB","B16":0.3,"B19":0.03,"B20":0.2,"B21":0.08,"B24":0.01,"B25":1,"B27":0,"B28":1,"B29":0,"B30":0,"B31":0.1,"B32":0,"B33":0,"B34":0.06,"B35":1,"B36":10,"B39":0.265,"B40":-0.41,"B41":7.42,"B42":11.2,"B43":0.265,"B44":-0.41,"B45":0.41,"B46":0.39,"B47":0.09,"B48":10.8,"B49":7.6,"B51":"Mittlere PDs","B52":0.0001,"B53":0.0002,"B54":0.0003,"B55":0.0004,"B56":0.0005,"B57":0.0007000000000000001,"B58":0.0009,"B59":0.0013,"B60":0.0022,"B61":0.0039000000000000003,"B62":0.0067,"B63":0.011699999999999999,"B64":0.0203,"B65":0.0351,"B66":0.0608,"B67":0.1054,"B68":0.1827,"C1":"der FutureValue Group AG","C4":"Mittel","C5":1000,"C6":100,"C7":0,"C8":500,"C9":150,"C10":350,"C13":"Dropdownliste","C27":"0=nein, 1=ja","C29":"0=Worst Case; 1=Gemittelt","C31":"ohne FcF-Wirkung","C35":"0: nein; 1: ja","C49":"PD-Grenzen","C51":"Grenzen","C52":0,"D4":"Max","D6":150,"E3":"Output","E4":"Jahresabschluss","E5":"Zinsaufwand","E6":"Gewinn vor Steuern (nachhaltig)","E7":"Steuern","E8":"Gewinn nach Steuer (nachhaltig)","E9":"fcF verschuldet (nachhaltig)","E10":"fcF unverschuldet (nachhaltig)","E11":"Tax Shield Effekt","E13":"Erwartungswerte Jahresabschluss","E14":"Umsatz","E15":"EBIT (erwartet, nachhaltig)","E16":"Wachstum w (Vergleichswert)","E17":"Gewinn (erwartet, nachhaltig, nSt.)","E18":"fcF verschuldet (erwartet, nachhaltig)","E19":"fcF unverschuldet (erwartet, nachhaltig)","E20":"Tax Shield Effekt","E21":"Bilanzsumme (betriebsnot. CE)","E22":"Eigenkapital","E23":"verz. Netto-FK (inkl. Pensionsrückst.)","E25":"Finanzkennzahlen (gemäß Erwartungswerte)","E26":"EKQ","E27":"ROCE","E28":"EBIT-Marge","E29":"ZDQ","E30":"EKR","E31":"Dyn. VG","E32":"impl. FKZinssatz","E34":"Risikokennzahlen","E35":"Standardabweichung FCF (verschuldet)","E36":"Ertragsrisiko (V fcf (verschuldet))","E37":"Standardabweichung FCF (unverschuldet)","E38":"Ertragsrisiko (V fcf (unverschuldet))","E39":"Standardabweichung Tax Shield","E40":"Ertragsrisiko (V fcf (unverschuldet))","E42":"Rating","E43":"PD aus vorhandenes Rating","E44":"Geschätztes PD FutureValue Group 1","E45":"Geschätztes PD FutureValue Group 2","E46":"Geschätztes PD FutureValue Group 3","E47":"WorstCase OD","E48":"Mittleres PD","E49":"Verwendetes PD","E50":"RatingNote FutureValue Group","E52":"Bewertung","E53":"Marktpreis Risiko (Lambda)","E54":"k (\"WACC\") (verschuldet)","E55":"k (\"WACC\") (unverschuldet)","E56":"k Tax Shield","E57":"Implizites Beta","E58":"Wert der Zahlungen ohne TaxShield","E59":"Wert des Tax Shields genau","E60":"Wert der Zahlungen mit Tax Shield","E61":"Wert (W) mit Tax Shield (Min EK)","E62":"Enterprise Value","E64":"Angemessene Multiples","E65":"KBV","E66":"KGV","E67":"KUV","E68":"m=EV/EBIT","E69":"PEG","E70":"Tobin-q","E72":"Warnmeldungen:","E81":"Adjustierungen Anpassungsphase","E82":"Eigenkapital","E83":"Liquidität","F4":"min","G4":"Norm","G27":"bezug auf F33 sonst zirkelbezug","G30":"theoretsich richtiger (vertr.) Zinssatz um auf eine erwartete Rendite in Höhe von rf+Aufschlag zu kommen","G78":"todo","H4":"Max","H58":"Wert der Tax Shield Falsch 1","I58":"Wert der Tax Shield Falsch 2","K60":"F19/(((1+B19)/(1-F53*B25*F37/F19)-1)+F49-F16)-F23-B33","K61":"(F19+F20)/(((1+B19)/(1-F53*B25*F35/(F19+F20))-1)+F49-F16)-F23-B33","M54":1,"M55":5.959927433218841};
+
+function excelEngine(data) {
+    function A1() { return data.A1; }
+    function A2() { return data.A2; }
+    function A3() { return data.A3; }
+    function A4() { return data.A4; }
+    function A5() { return data.A5; }
+    function A6() { return data.A6; }
+    function A7() { return data.A7; }
+    function A8() { return data.A8; }
+    function A9() { return data.A9; }
+    function A10() { return data.A10; }
+    function A12() { return data.A12; }
+    function A13() { return data.A13; }
+    function A15() { return data.A15; }
+    function A16() { return data.A16; }
+    function A18() { return data.A18; }
+    function A19() { return data.A19; }
+    function A20() { return data.A20; }
+    function A21() { return data.A21; }
+    function A23() { return data.A23; }
+    function A24() { return data.A24; }
+    function A25() { return data.A25; }
+    function A26() { return data.A26; }
+    function A27() { return data.A27; }
+    function A28() { return data.A28; }
+    function A29() { return data.A29; }
+    function A30() { return data.A30; }
+    function A31() { return data.A31; }
+    function A32() { return data.A32; }
+    function A33() { return data.A33; }
+    function A34() { return data.A34; }
+    function A35() { return data.A35; }
+    function A36() { return data.A36; }
+    function A38() { return data.A38; }
+    function A39() { return data.A39; }
+    function A40() { return data.A40; }
+    function A41() { return data.A41; }
+    function A42() { return data.A42; }
+    function A43() { return data.A43; }
+    function A44() { return data.A44; }
+    function A45() { return data.A45; }
+    function A46() { return data.A46; }
+    function A47() { return data.A47; }
+    function A48() { return data.A48; }
+    function A49() { return data.A49; }
+    function A51() { return data.A51; }
+    function A52() { return data.A52; }
+    function A53() { return data.A53; }
+    function A54() { return data.A54; }
+    function A55() { return data.A55; }
+    function A56() { return data.A56; }
+    function A57() { return data.A57; }
+    function A58() { return data.A58; }
+    function A59() { return data.A59; }
+    function A60() { return data.A60; }
+    function A61() { return data.A61; }
+    function A62() { return data.A62; }
+    function A63() { return data.A63; }
+    function A64() { return data.A64; }
+    function A65() { return data.A65; }
+    function A66() { return data.A66; }
+    function A67() { return data.A67; }
+    function A68() { return data.A68; }
+    function B4() { return data.B4; }
+    function B6() { return data.B6; }
+    function B13() { return data.B13; }
+    function B16() { return data.B16; }
+    function B19() { return data.B19; }
+    function B20() { return data.B20; }
+    function B21() { return data.B21; }
+    function B24() { return data.B24; }
+    function B25() { return data.B25; }
+    function B27() { return data.B27; }
+    function B28() { return data.B28; }
+    function B29() { return data.B29; }
+    function B30() { return data.B30; }
+    function B31() { return data.B31; }
+    function B32() { return data.B32; }
+    function B33() { return data.B33; }
+    function B34() { return data.B34; }
+    function B35() { return data.B35; }
+    function B36() { return data.B36; }
+    function B39() { return data.B39; }
+    function B40() { return data.B40; }
+    function B41() { return data.B41; }
+    function B42() { return data.B42; }
+    function B43() { return data.B43; }
+    function B44() { return data.B44; }
+    function B45() { return data.B45; }
+    function B46() { return data.B46; }
+    function B47() { return data.B47; }
+    function B48() { return data.B48; }
+    function B49() { return data.B49; }
+    function B51() { return data.B51; }
+    function B52() { return data.B52; }
+    function B53() { return data.B53; }
+    function B54() { return data.B54; }
+    function B55() { return data.B55; }
+    function B56() { return data.B56; }
+    function B57() { return data.B57; }
+    function B58() { return data.B58; }
+    function B59() { return data.B59; }
+    function B60() { return data.B60; }
+    function B61() { return data.B61; }
+    function B62() { return data.B62; }
+    function B63() { return data.B63; }
+    function B64() { return data.B64; }
+    function B65() { return data.B65; }
+    function B66() { return data.B66; }
+    function B67() { return data.B67; }
+    function B68() { return data.B68; }
+    function C1() { return data.C1; }
+    function C4() { return data.C4; }
+    function C5() { return data.C5; }
+    function C6() { return data.C6; }
+    function C7() { return data.C7; }
+    function C8() { return data.C8; }
+    function C9() { return data.C9; }
+    function C10() { return data.C10; }
+    function C13() { return data.C13; }
+    function C27() { return data.C27; }
+    function C29() { return data.C29; }
+    function C31() { return data.C31; }
+    function C35() { return data.C35; }
+    function C49() { return data.C49; }
+    function C51() { return data.C51; }
+    function C52() { return data.C52; }
+    function C53() { return (B53()+B52())/2; }
+    function C54() { return (B54()+B53())/2; }
+    function C55() { return (B55()+B54())/2; }
+    function C56() { return (B56()+B55())/2; }
+    function C57() { return (B57()+B56())/2; }
+    function C58() { return (B58()+B57())/2; }
+    function C59() { return (B59()+B58())/2; }
+    function C60() { return (B60()+B59())/2; }
+    function C61() { return (B61()+B60())/2; }
+    function C62() { return (B62()+B61())/2; }
+    function C63() { return (B63()+B62())/2; }
+    function C64() { return (B64()+B63())/2; }
+    function C65() { return (B65()+B64())/2; }
+    function C66() { return (B66()+B65())/2; }
+    function C67() { return (B67()+B66())/2; }
+    function C68() { return (B68()+B67())/2; }
+    function D4() { return data.D4; }
+    function D6() { return data.D6; }
+    function E3() { return data.E3; }
+    function E4() { return data.E4; }
+    function E5() { return data.E5; }
+    function E6() { return data.E6; }
+    function E7() { return data.E7; }
+    function E8() { return data.E8; }
+    function E9() { return data.E9; }
+    function E10() { return data.E10; }
+    function E11() { return data.E11; }
+    function E13() { return data.E13; }
+    function E14() { return data.E14; }
+    function E15() { return data.E15; }
+    function E16() { return data.E16; }
+    function E17() { return data.E17; }
+    function E18() { return data.E18; }
+    function E19() { return data.E19; }
+    function E20() { return data.E20; }
+    function E21() { return data.E21; }
+    function E22() { return data.E22; }
+    function E23() { return data.E23; }
+    function E25() { return data.E25; }
+    function E26() { return data.E26; }
+    function E27() { return data.E27; }
+    function E28() { return data.E28; }
+    function E29() { return data.E29; }
+    function E30() { return data.E30; }
+    function E31() { return data.E31; }
+    function E32() { return data.E32; }
+    function E34() { return data.E34; }
+    function E35() { return data.E35; }
+    function E36() { return data.E36; }
+    function E37() { return data.E37; }
+    function E38() { return data.E38; }
+    function E39() { return data.E39; }
+    function E40() { return data.E40; }
+    function E42() { return data.E42; }
+    function E43() { return data.E43; }
+    function E44() { return data.E44; }
+    function E45() { return data.E45; }
+    function E46() { return data.E46; }
+    function E47() { return data.E47; }
+    function E48() { return data.E48; }
+    function E49() { return data.E49; }
+    function E50() { return data.E50; }
+    function E52() { return data.E52; }
+    function E53() { return data.E53; }
+    function E54() { return data.E54; }
+    function E55() { return data.E55; }
+    function E56() { return data.E56; }
+    function E57() { return data.E57; }
+    function E58() { return data.E58; }
+    function E59() { return data.E59; }
+    function E60() { return data.E60; }
+    function E61() { return data.E61; }
+    function E62() { return data.E62; }
+    function E64() { return data.E64; }
+    function E65() { return data.E65; }
+    function E66() { return data.E66; }
+    function E67() { return data.E67; }
+    function E68() { return data.E68; }
+    function E69() { return data.E69; }
+    function E70() { return data.E70; }
+    function E72() { return data.E72; }
+    function E73() { return IF(F27()-F54()>0.05,"keine Renditekonvergenz",".. "); }
+    function E74() { return IF(F16()<B19()*0.99,"kein Inflationsausgleich",".. "); }
+    function E75() { return IF(OR(F53()<0.175,F53()>0.3),"Marktpreis Risiko ungewöhnlich",".. "); }
+    function E76() { return IF(F61()<C9(),"Substanz dominiert Wert",".."); }
+    function E77() { return IF(F49()>0.07,"akute Krise",".."); }
+    function E78() { return IF(MAX(C7(),IF(B30()>0,B31(),0))>F30(),"Wachstum führt zu sinkender EKQ!",".."); }
+    function E81() { return data.E81; }
+    function E82() { return data.E82; }
+    function E83() { return data.E83; }
+    function F4() { return data.F4; }
+    function F6() { return B6()-G5(); }
+    function F7() { return MAX(0,F6()*B16()); }
+    function F8() { return F6()-F7(); }
+    function F9() { return B6()-C7()*C8()-F7(); }
+    function F10() { return B6()*IF(B6()>0,(1-B16()),1); }
+    function F11() { return F9()-F10(); }
+    function F13() { return 0; }
+    function F14() { return C5(); }
+    function F15() { return SUM([B6(),C6(),D6()])/3; }
+    function F16() { return C7(); }
+    function F17() { return AVERAGE([F8(),G8(),H8()]); }
+    function F18() { return SUM([F9(),G9(),H9()])/3; }
+    function F19() { return SUM([F10(),G10(),H10()])/3; }
+    function F20() { return AVERAGE([F11(),G11(),H11()]); }
+    function F21() { return C8(); }
+    function F22() { return C9(); }
+    function F23() { return C10(); }
+    function F26() { return F22()/F21(); }
+    function F27() { return F15()/F21(); }
+    function F28() { return F15()/F14(); }
+    function F29() { return F15()/((F23()-B33())*(B19()+B24()+IF(B27()===1,F43(),F44()))); }
+    function F30() { return F17()/C9(); }
+    function F31() { return IF(B36()>0,(C10()-B33())/(F15()+B36()),"n.a."); }
+    function F32() { return (1+F49()+B19())/(1-B24())-1; }
+    function F35() { return SQRT((F9()-H9())^2+(F9()-G9())^2+(H9()-G9())^2)/6; }
+    function F36() { return F35()/F18(); }
+    function F37() { return SQRT((F10()-H10())^2+(F10()-G10())^2+(H10()-G10())^2)/6; }
+    function F38() { return F37()/F19(); }
+    function F39() { return SQRT((F13()-H12())^2+(F13()-G12())^2+(H12()-G12())^2)/6; }
+    function F40() { return F39()/F20(); }
+    function F43() { return VLOOKUP(B13(),[A52(),B52(),A53(),B53(),A54(),B54(),A55(),B55(),A56(),B56(),A57(),B57(),A58(),B58(),A59(),B59(),A60(),B60(),A61(),B61(),A62(),B62(),A63(),B63(),A64(),B64(),A65(),B65(),A66(),B66(),A67(),B67(),A68(),B68()],2,FALSE); }
+    function F44() { return B39()/(1+EXP(B40()+B41()*MAX(0,F26())+B42()*MAX(F27(),-0.1))); }
+    function F45() { return B43()/(1+EXP(-B44()+B45()*F29())); }
+    function F46() { return B46()/(1+EXP(B47()+B48()*MAX(0,F26())+B49()*MAX(F28(),-0.1))); }
+    function F47() { return MAX([F44(),F45(),F46()]); }
+    function F48() { return AVERAGE([F44(),F45(),F46()]); }
+    function F49() { return IF(B27()===1,F43(),IF(B29()===0,F47(),F48())); }
+    function F50() { return INDEX([A52(),A53(),A54(),A55(),A56(),A57(),A58(),A59(),A60(),A61(),A62(),A63(),A64(),A65(),A66(),A67(),A68()],MATCH(F49(),[C52(),C53(),C54(),C55(),C56(),C57(),C58(),C59(),C60(),C61(),C62(),C63(),C64(),C65(),C66(),C67(),C68()],1)); }
+    function F53() { return (B21()-B19())/B20(); }
+    function F54() { return IF(1-F53()*B25()*F36()>0,(1+B19())/(1-F53()*B25()*F36())*(1-0.0199)); }
+    function F55() { return IF(1-F53()*B25()*F38()>0,(1+B19())/(1-F53()*B25()*F38())*(1-0.0199)); }
+    function F56() { return IF(1-F53()*B25()*F40()>0,(1+B19())/(1-F53()*B25()*F40())*(1-0.0199)); }
+    function F57() { return (F54()-B19())/(B21()-B19()); }
+    function F58() { return F19()/(F55()+F49()-F16())*(1+(F19()-(B31()-C7())*C8())*(F55()-C7())*(1-((1+B31())/(1+F55()))^B30()))-F23()-B33(); }
+    function F59() { return -F58()+F60(); }
+    function F60() { return F18()/(F54()+F49()-F16())*(1+(F18()-(B31()-C7())*C8())*(F54()-C7())*(1-((1+B31())/(1+F54()))^B30()))-F23()-B33(); }
+    function F61() { return MAX(B28()*F22(),F58()); }
+    function F62() { return (F61()+F23()+B33()); }
+    function F65() { return F61()/F22(); }
+    function F66() { return F61()/F17(); }
+    function F67() { return F61()/F14(); }
+    function F68() { return (F61()+F23())/F15(); }
+    function F69() { return IF(B30()===0,F66()/C7(),F66()/B31())/100; }
+    function F70() { return (F61()+C10())/C8(); }
+    function F82() { return B30()*((F27()+MIN(F54(),1.5*B21()))/2)*(1-B16())*C8()+G77(); }
+    function F83() { return IF(B32()===1,B30()*(F27()+MIN(F54(),1.5*B21()))/2*C8(),0); }
+    function G4() { return data.G4; }
+    function G5() { return (B19()+F49()+B24())*(C10()-B33())-B34()*B33(); }
+    function G6() { return C6()-G5(); }
+    function G7() { return MAX(0,G6()*B16()); }
+    function G8() { return G6()-G7(); }
+    function G9() { return C6()-C7()*C8()-G7(); }
+    function G10() { return C6()*IF(C6()>0,(1-B16()),1); }
+    function G11() { return G9()-G10(); }
+    function G12() { return G11(); }
+    function G27() { return data.G27; }
+    function G30() { return data.G30; }
+    function G54() { return IF(1-F53()*B25()*F36()>0,(1+B19())/(1-F53()*F36())*(1-0.0199)); }
+    function G55() { return IF(1-F53()*B25()*F38()>0,(1+B19())/(1-F53()*F38())*(1-0.0199)); }
+    function G56() { return IF(1-F53()*B25()*F40()>0,(1+B19())/(1-F53()*F40())*(1-0.0199)); }
+    function G77() { return -(B19()+F49()+B24())*(C10()-B33())-B34()*B33(); }
+    function G78() { return data.G78; }
+    function H4() { return data.H4; }
+    function H6() { return D6()-G5(); }
+    function H7() { return MAX(0,H6()*B16()); }
+    function H8() { return H6()-H7(); }
+    function H9() { return D6()-C7()*C8()-H7(); }
+    function H10() { return D6()*IF(D6()>0,(1-B16()),1); }
+    function H11() { return H9()-H10(); }
+    function H12() { return H11(); }
+    function H58() { return data.H58; }
+    function H59() { return F20()/(F56()+F49()-F16())*(1+(F20()-(B31()-C7())*C8())*(F56()-C7())*(1-((1+B31())/(1+F56()))^B30())); }
+    function I58() { return data.I58; }
+    function I59() { return F20()/(F55()+F49()-F16())*(1+(F19()-(B31()-C7())*C8())*(F55()-C7())*(1-((1+B31())/(1+F55()))^B30())); }
+    function K19() { return F18()/F19(); }
+    function K52() { return (F56()*F20()+F54()*F19())/(F18()); }
+    function K55() { return F20()/F59(); }
+    function K60() { return data.K60; }
+    function K61() { return data.K61; }
+    function L8() { return B6()*(1-B16()); }
+    function L10() { return L8()-F8(); }
+    function L13() { return (F19()*F55()+F20()*F56())/(F19()+F11()); }
+    function L14() { return F54(); }
+    function L16() { return L13()/L14(); }
+    function L17() { return L13()-L14(); }
+    function L33() { return F18()/F19(); }
+    function M8() { return C6()*(1-B16()); }
+    function M10() { return M8()-G8(); }
+    function M13() { return (F19()*G55()+F20()*G56())/(F19()+F11()); }
+    function M14() { return G54(); }
+    function M16() { return M13()/M14(); }
+    function M17() { return M13()-M14(); }
+    function M33() { return 1/L33(); }
+    function M35() { return F20()/M33(); }
+    function M54() { return data.M54; }
+    function M55() { return data.M55; }
+    function N8() { return D6()*(1-B16()); }
+    function N10() { return N8()-H8(); }
+    function N54() { return (F55()+F49()+B24()); }
+    function N55() { return F56()+F49()+B24(); }
+    function O56() { return (N54()*M54()+N55()*M55())/(M54()+M55()); }
+    function P56() { return O56()-K55(); }
+    var refs = {"C53":C53,"C54":C54,"C55":C55,"C56":C56,"C57":C57,"C58":C58,"C59":C59,"C60":C60,"C61":C61,"C62":C62,"C63":C63,"C64":C64,"C65":C65,"C66":C66,"C67":C67,"C68":C68,"E73":E73,"E74":E74,"E75":E75,"E76":E76,"E77":E77,"E78":E78,"F6":F6,"F7":F7,"F8":F8,"F9":F9,"F10":F10,"F11":F11,"F14":F14,"F15":F15,"F16":F16,"F17":F17,"F18":F18,"F19":F19,"F20":F20,"F21":F21,"F22":F22,"F23":F23,"F26":F26,"F27":F27,"F28":F28,"F29":F29,"F30":F30,"F31":F31,"F32":F32,"F35":F35,"F36":F36,"F37":F37,"F38":F38,"F39":F39,"F40":F40,"F43":F43,"F44":F44,"F45":F45,"F46":F46,"F47":F47,"F48":F48,"F49":F49,"F50":F50,"F53":F53,"F54":F54,"F55":F55,"F56":F56,"F57":F57,"F58":F58,"F59":F59,"F60":F60,"F61":F61,"F62":F62,"F65":F65,"F66":F66,"F67":F67,"F68":F68,"F69":F69,"F70":F70,"F82":F82,"F83":F83,"G5":G5,"G6":G6,"G7":G7,"G8":G8,"G9":G9,"G10":G10,"G11":G11,"G54":G54,"G55":G55,"G56":G56,"G77":G77,"H6":H6,"H7":H7,"H8":H8,"H9":H9,"H10":H10,"H11":H11,"H59":H59,"I59":I59,"K19":K19,"K52":K52,"K55":K55,"L8":L8,"L10":L10,"L13":L13,"L14":L14,"L16":L16,"L17":L17,"L33":L33,"M8":M8,"M10":M10,"M13":M13,"M14":M14,"M16":M16,"M17":M17,"M33":M33,"M35":M35,"N8":N8,"N10":N10,"N54":N54,"N55":N55,"O56":O56,"P56":P56};
+    return refs;
+};

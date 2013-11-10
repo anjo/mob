@@ -1,11 +1,8 @@
 'use strict';
 
-function MainCtrl($scope) {
-    $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Testacular'
-    ];
+function MainCtrl($scope, engine, data) {
+    $scope.data = data;
+    $scope.engine = engine(data);
 }
 
 angular.module('mobApp').controller('MainCtrl', MainCtrl);

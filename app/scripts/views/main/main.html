@@ -9,57 +9,57 @@
     <tr>
         <td>Umsatz</td>
         <td></td>
-        <td><input type="float" size="6" value="1000,0"></td>
+        <td><input type="float" size="6" ng-model="data.C5"></td>
         <td></td>
-        <td type="float">1000,0</td>
+        <td type="float" ng-bind="engine.F14()"></td>
     </tr>
     <tr>
         <td>EBIT (erwartet, nachhaltig)</td>
-        <td><input type="float" size="5" value="50,0"></td>
-        <td><input type="float" size="5" value="100,0"></td>
-        <td><input type="float" size="5" value="150,0"></td>
-        <td type="float">100,0</td>
+        <td><input type="float" size="5" ng-model="data.B6"></td>
+        <td><input type="float" size="5" ng-model="data.C6"></td>
+        <td><input type="float" size="5" ng-model="data.D6"></td>
+        <td type="float" ng-bind="engine.F15()"></td>
     </tr>
     <tr>
         <td>Wachstum w (langfristig)</td>
         <td></td>
-        <td><input type="percent" size="5" value="0,0"></td>
+        <td><input type="percent" size="5" ng-model="data.C7"></td>
         <td></td>
-        <td type="float">0,0</td>
+        <td type="float" ng-bind="engine.F16()"></td>
     </tr>
     <tr>
         <td>Gewinn (erwartet, nachhaltig, nSt.)</td>
-        <td type="float">22,24</td>
-        <td type="float">57,24</td>
-        <td type="float">92,24</td>
-        <td type="float">57,20</td>
+        <td type="float" ng-bind="engine.F8()"></td>
+        <td type="float" ng-bind="engine.G8()"></td>
+        <td type="float" ng-bind="engine.H8()"></td>
+        <td type="float" ng-bind="engine.F17()"></td>
     </tr>
     <tr>
         <td>fcF (erwartet, nachhaltig)</td>
-        <td type="float">40,47</td>
-        <td type="float">75,47</td>
-        <td type="float">110,47</td>
-        <td type="float">75,5</td>
+        <td type="float" ng-bind="engine.F9()"></td>
+        <td type="float" ng-bind="engine.G9()"></td>
+        <td type="float" ng-bind="engine.H9()"></td>
+        <td type="float" ng-bind="engine.F18()"></td>
     </tr>
     <tr>
         <td>Bilanzsumme (, betriebsnot. CE)</td>
         <td></td>
-        <td><input type="int" size="3" value="500"></td>
+        <td><input type="int" size="3" ng-model="data.C8"></td>
         <td></td>
-        <td type="float">500,0</td>
+        <td type="float" ng-bind="engine.F21()"></td>
     </tr>
     <tr>
         <td>EK</td>
         <td></td>
-        <td><input type="int" size="3" value="150"></td>
+        <td><input type="int" size="3" ng-model="data.C9"></td>
         <td></td>
-        <td type="float">150,0</td>
+        <td type="float" ng-bind="engine.F22()"></td>
     </tr>
     <tr>
         <td>verz. Netto-FK (inkl. Pensionsrückst.)</td>
         <td></td>
-        <td><input type="int" size="3" value="350"></td>
+        <td><input type="int" size="3" ng-model="data.C10"></td>
         <td></td>
-        <td type="float">350,0</td>
+        <td type="float" ng-bind="engine.F23()"></td>
     </tr>
 </table>

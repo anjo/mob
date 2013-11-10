@@ -1,11 +1,7 @@
 'use strict';
 
-function SettingsCtrl($scope) {
-    $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Testacular'
-    ];
+function SettingsCtrl($scope, data) {
+    $scope.data = data;
 }
 
 angular.module('mobApp').controller('SettingsCtrl', SettingsCtrl);

@@ -1,15 +1,11 @@
-<table class="table">
+<table class="table" id="settings">
     <tr>
         <th>allgemeine Parameter</th>
         <th></th>
     </tr>
     <tr>
         <td>Steuersatz s</td>
-        <td>30,0%</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
+        <td><input type="percent" size="6" ng-model="data.B16"></td>
     </tr>
 </table>
 <table class="table">
@@ -19,15 +15,15 @@
     </tr>
     <tr>
         <td>Zins rf (ggf. nachhaltig)</td>
-        <td>3,0%</td>
+        <td><input type="percent" size="6" ng-model="data.B19"></td>
     </tr>
     <tr>
         <td>Standardabweichung Markt</td>
-        <td>20%</td>
+        <td><input type="percent" size="6" ng-model="data.B20"></td>
     </tr>
     <tr>
         <td>Erwartungswert Markt</td>
-        <td>8%</td>
+        <td><input type="percent" size="6" ng-model="data.B21"></td>
     </tr>
 </table>
 <table class="table">
@@ -37,26 +33,26 @@
     </tr>
     <tr>
         <td>Verwaltungsaufschalg</td>
-        <td>1%</td>
+        <td><input type="percent" size="6" ng-model="data.B24"></td>
     </tr>
     <tr>
         <td>Risikodiversifikationsfaktor d</td>
-        <td>1</td>
+        <td><input type="int" size="6" ng-model="data.B25"></td>
     </tr>
     <tr>
         <td>Investitionsdauer</td>
-        <td>0</td>
+        <td><input type="int" size="6" ng-model="data.B26"></td>
     </tr>
     <tr>
         <td>Vorhandenes Rating verwenden</td>
-        <td>0,00</td>
+        <td><input type="float" size="6" ng-model="data.B27"></td>
     </tr>
     <tr>
         <td>Werthaltigkeit Eigenkapital</td>
-        <td>1,00</td>
+        <td><input type="float" size="6" ng-model="data.B29"></td>
     </tr>
     <tr>
         <td>FutureValue Group-PD-Schätzung</td>
-        <td>0,00</td>
+        <td><input type="float" size="6" ng-model="data.XX" value="0"></td>
     </tr>
 </table>

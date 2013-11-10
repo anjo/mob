@@ -1,7 +1,25 @@
 @ximport "http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css";
+@import "../components/bootstrap/css/bootstrap.css";
 
 header {
     background-color: black;
+}
+
+table td {
+    text-align: right;
+}
+
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4),
+table td:nth-child(5)
+{
+    text-align: right;
+}
+
+table td:nth-child(1) {
+    width: 70%;
+    text-align: left;
 }
 
 *[type="float"] {
@@ -27,7 +45,7 @@ header {
     width: 100%;
 }
 
-td:hover:before {
+#struture td:hover:before {
     content: attr(id)  ': '  attr(result);
     outline: 1px solid black;
     -moz-outline: 1px solid black;
@@ -43,15 +61,15 @@ td:hover:before {
     font-weight: normal;
 }
 
-td[celltype='CELL_TYPE_FORMULA'] {
+#struture td[celltype='CELL_TYPE_FORMULA'] {
     background-color: red;
 }
 
-td[celltype='CELL_TYPE_STRING'], td[celltype='CELL_TYPE_NUMERIC'] {
+#struture td[celltype='CELL_TYPE_STRING'], td[celltype='CELL_TYPE_NUMERIC'] {
     background-color: greenyellow;
 }
 
-td.done {
+#struture td.done {
     background-color: grey;
 }
 

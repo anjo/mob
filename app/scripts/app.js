@@ -47,10 +47,8 @@ structural.controller('StructuralCtrl', function ($document, $log) {
         var n = node(token);
         switch(n.type) {
             case 'CELL_TYPE_STRING':
-                val = "function " + token + "() { return '" + val + "'; }";
-                break;
             case 'CELL_TYPE_NUMERIC':
-                val = "function " + token + "() { return " + val + "; }";
+                val = "function " + token + "() { return data." + token + "; }";
                 break;
             case 'CELL_TYPE_FORMULA':
                 val = "function " + token + "() { return " + val + "; }";
@@ -62,34 +60,6 @@ structural.controller('StructuralCtrl', function ($document, $log) {
 
     var fixToken = function(token) {
         if(token.match(/^[A-Z]+[0-9]+$/)) {
-            if(!total[token]) {
-                total[token] = "x";
-                var n = node(token);
-                var val = format(n.content);
-                switch(n.type) {
-                    case 'CELL_TYPE_STRING':
-                        val = "function " + token + "() { return '" + val + "'; }";
-                        break;
-                    case 'CELL_TYPE_NUMERIC':
-                        val = "function " + token + "() { return " + val + "; }";
-                        break;
-                    case 'CELL_TYPE_FORMULA':
-                        val = "function " + token + "() { return " + val + "; }";
-                        break;
-
-                }
-                total[token] = val;
-
-                if(val) {
-                    if(n.element) {
-                        n.element.className += " done";
-                    }
-
-                    functions.push(val);
-                } else {
-                    $log.warn("no val", token, n, val);
-                }
-            }
             token += "()";
         }
         return token;
@@ -101,6 +71,7 @@ structural.controller('StructuralCtrl', function ($document, $log) {
         }
         if(!formula.replace) {
             $log.error("wrong type", formula);
+            return;
         }
 
         formula = formula.replace(/\$/ig,"");
@@ -272,49 +243,67 @@ structural.controller('StructuralCtrl', function ($document, $log) {
             return x[1] == y[1] ? parseInt(x[2])-parseInt(y[2]) : x[1].charCodeAt(0) - y[1].charCodeAt(0);
         }
         var funcs = [];
+        var refs = {};
+        var data = {};
+
+        funcs.push(H12.toString());
+        funcs.push(F13.toString());
+        funcs.push(G12.toString());
 
         for(var col = 0; col < 25; col++) {
             for(var row = 1; row < 100; row++) {
                 var idx = String.fromCharCode(65 + col) + "" + row;
                 var n = node(idx);
+                var content = n.content;
                 switch(n.type) {
                     case 'CELL_TYPE_FORMULA':
-                        total[idx] = toFunction(idx, format(n.content));
+                        total[idx] = toFunction(idx, format(content));
+                        funcs.push(total[idx]);
+                        refs[idx] = idx;
                         break;
                     case 'CELL_TYPE_NUMERIC':
+                        content = parseFloat(content);
                     case 'CELL_TYPE_STRING':
-                        total[idx] = toFunction(idx, n.content);
+                        data[idx] = content;
+                        total[idx] = toFunction(idx);
+                        funcs.push(total[idx]);
                         break;
-                }
-                if(total[idx]) {
-                    //$log.info("processed: " + idx + "-> "  + n.content + " -->" + total[idx])
-                    funcs.push(total[idx]);
                 }
             }
         }
-         var res = funcs.sort(sorter).join(";\n");
-        $log.info(res);
+        data = JSON.stringify(data);
+        refs = JSON.stringify(refs).replace(/\:\"(.*?)\"/gi, ":$1");
+        funcs = funcs.sort(sorter).join("\n");
+        var out = "var data = " + data + ";\n\nfunction engine(data) {\n\n"+
+            funcs + "\n var refs = " + refs + ";\n return refs;\n" +
+        "};\n";
+        //$log.info(funcs);
+        //$log.info(data);
+        //$log.info(refs);
         //$log.info("G5", C5(), F14(), F15());
-        alert(res);
+        alert(out);
     } else if(mode == 2) {
         var n = node('F47');
         $log.info("processing: " + idx + "-> "  + n.content + "-->" + format(n.content))
     } else if(mode == 3) {
+        var refs = engine(window.data);
+        $log.info(refs);
         for(var col = 0; col < 25; col++) {
             for(var row = 1; row < 100; row++) {
                 var idx = String.fromCharCode(65 + col) + "" + row;
                 var n = node(idx);
-                var func = window[idx];
+                var func = refs[idx];
                 switch(n.type) {
                     case 'CELL_TYPE_FORMULA':
-                    case 'CELL_TYPE_NUMERIC':
-                    case 'CELL_TYPE_STRING':
+                    //case 'CELL_TYPE_NUMERIC':
+                    //case 'CELL_TYPE_STRING':
                         try {
                             total[idx] = func();
                         } catch(e) {
                             total[idx] = e;
                         }
                         n.element.setAttribute('result', total[idx]);
+                        n.element.innerHTML = total[idx];
                         $log.info(idx, total[idx]);
                         break;
                 }
