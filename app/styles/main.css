@@ -45,7 +45,7 @@ table td:nth-child(1) {
     width: 100%;
 }
 
-#struture td:hover:before {
+#structure td:hover:before {
     content: attr(id)  ': '  attr(result);
     outline: 1px solid black;
     -moz-outline: 1px solid black;
@@ -61,15 +61,15 @@ table td:nth-child(1) {
     font-weight: normal;
 }
 
-#struture td[celltype='CELL_TYPE_FORMULA'] {
-    background-color: red;
+#structure td[celltype='CELL_TYPE_FORMULA'] {
+    -background-color: red;
 }
 
-#struture td[celltype='CELL_TYPE_STRING'], td[celltype='CELL_TYPE_NUMERIC'] {
+#structure td[celltype='CELL_TYPE_STRING'], td[celltype='CELL_TYPE_NUMERIC'] {
     background-color: greenyellow;
 }
 
-#struture td.done {
+#structure td.done {
     background-color: grey;
 }
 

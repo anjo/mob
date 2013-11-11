@@ -286,8 +286,8 @@ structural.controller('StructuralCtrl', function ($document, $log) {
         var n = node('F47');
         $log.info("processing: " + idx + "-> "  + n.content + "-->" + format(n.content))
     } else if(mode == 3) {
-        var refs = engine(window.data);
-        $log.info(refs);
+        var refs = window.refs = excelEngine(window.data);
+        //$log.info(refs);
         for(var col = 0; col < 25; col++) {
             for(var row = 1; row < 100; row++) {
                 var idx = String.fromCharCode(65 + col) + "" + row;
@@ -302,8 +302,8 @@ structural.controller('StructuralCtrl', function ($document, $log) {
                         } catch(e) {
                             total[idx] = e;
                         }
-                        n.element.setAttribute('result', total[idx]);
-                        n.element.innerHTML = total[idx];
+                        n.element.setAttribute('result', n.content);
+                        n.element.innerHTML =  total[idx].toFixed ? total[idx].toFixed(5) : total[idx];
                         $log.info(idx, total[idx]);
                         break;
                 }
