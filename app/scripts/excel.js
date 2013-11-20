@@ -227,7 +227,7 @@ function excelEngine(data) {
     function F11() { return F9()-F10(); }
     function F13() { return 0; }
     function F14() { return C5(); }
-    function F15() { return SUM([B6(),C6(),D6()])/3; }
+    function F15() { return AVERAGE([B6(),C6(),D6()]); }
     function F16() { return C7(); }
     function F17() { return AVERAGE([F8(),G8(),H8()]); }
     function F18() { return SUM([F9(),G9(),H9()])/3; }

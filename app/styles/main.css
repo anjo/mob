@@ -22,17 +22,21 @@ table td:nth-child(1) {
     text-align: left;
 }
 
-*[type="float"] {
+input {
+    width: 50px ! important;
+}
+
+*[format="float"] {
     width: auto;
     text-align: right;
 }
 
-*[type="int"] {
+*[format="int"] {
     width: auto;
     text-align: right;
 }
 
-*[type="percent"] {
+*[format="percent"] {
     width: auto;
     text-align: right;
 }
